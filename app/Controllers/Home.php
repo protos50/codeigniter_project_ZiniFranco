@@ -8,4 +8,9 @@ class Home extends BaseController
     {
         return view('welcome_message');
     }
+
+    public function principal() 
+    {
+        return view('principal.html');
+    }
 }
