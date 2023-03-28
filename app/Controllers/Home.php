@@ -13,4 +13,9 @@ class Home extends BaseController
     {
         return view('principal.html');
     }
+
+    public function plantilla() 
+    {
+        return view('plantilla.php');
+    }
 }
