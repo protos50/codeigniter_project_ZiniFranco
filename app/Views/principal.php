@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Navbar con Bootstrap</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     </head>
   <body>
