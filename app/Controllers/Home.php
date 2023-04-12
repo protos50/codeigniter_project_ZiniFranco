@@ -6,16 +6,6 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
-    }
-
-    public function principal() 
-    {
-        return view('principal.html');
-    }
-
-    public function plantilla() 
-    {
-        return view('plantilla.php');
+        return view('principal.php');
     }
 }
