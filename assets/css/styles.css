@@ -27,6 +27,21 @@
   width: 100%;
   left: 0;
   right: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #d09d7b;
+  opacity: 0,025 !important;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 0,125 !important;
 }
 
 
