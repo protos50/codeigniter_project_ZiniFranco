@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Navbar con Bootstrap</title>
+  <title>Smart Home Corrientes</title>
 
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
@@ -27,72 +27,60 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Inicio</a>
-          </li>
+
           <li class="nav-item dropdown position-static">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Productos
-            </a>
-
-            <!-- <div class="container-fluid">
-              <div class="row w-100">
-                <div class="col-12 col-md-3">
-                  
-                </div>
-              </div>
-            </div>
-
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-              <li><a class="dropdown-item" href="#">Tablets</a></li>
-              <li><a class="dropdown-item" href="#">Accesorios</a></li>
-            </ul> -->
+              Productos </a>
 
             <ul class="dropdown-menu w-100 text-center">
               <div class="container-fluid">
-                <div class="row w-100">
-                  <div class="col-12 col-md-3">
-          <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-          <li><a class="dropdown-item" href="#">Tablets</a></li>
-          <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                <div class="row w-100 justify-content-center">
+                  <div class="col-6 col-md-3 col-sm-3">
+                    <li><a class="dropdown-item" href="#">Teléfonos</a></li>
+                    <li><a class="dropdown-item" href="#">Tablets</a></li>
+                    <li><a class="dropdown-item" href="#">Accesorios</a></li>
 
+                  </div>
+
+                  <div class="col-6 col-md-3 col-sm-3">
+                    <li><a class="dropdown-item" href="#">Teléfonos</a></li>
+                    <li><a class="dropdown-item" href="#">Tablets </a></li>
+                    <li><a class="dropdown-item" href="#">Accesorios</a></li>
+
+                  </div>
+
+                  <div class="col-6 col-md-3 col-sm-3">
+                    <li><a class="dropdown-item" href="#">Teléfonos</a></li>
+                    <li><a class="dropdown-item" href="#">Tablets</a></li>
+                    <li><a class="dropdown-item" href="#">Accesorios</a></li>
+
+                  </div>
+
+                  <div class="col-6 col-md-3 col-sm-3">
+                    <li><a class="dropdown-item" href="#">Teléfonos</a></li>
+                    <li><a class="dropdown-item" href="#">Tablets</a></li>
+                    <li><a class="dropdown-item" href="#">Accesorios</a></li>
+
+                  </div>
+                </div>
+              </div>
+            </ul>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Quienes Somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Comercialización</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Información de Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Términos y Usos</a>
+          </li>
+        </ul>
       </div>
-
-      <div class="col-12 col-md-3">
-          <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-          <li><a class="dropdown-item" href="#">Tablets</a></li>
-          <li><a class="dropdown-item" href="#">Accesorios</a></li>
-
-      </div>
-
-      <div class="col-12 col-md-3">
-          <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-          <li><a class="dropdown-item" href="#">Tablets</a></li>
-          <li><a class="dropdown-item" href="#">Accesorios</a></li>
-
-      </div>
-
-      <div class="col-12 col-md-3">
-          <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-          <li><a class="dropdown-item" href="#">Tablets</a></li>
-          <li><a class="dropdown-item" href="#">Accesorios</a></li>
-
-      </div>
-    </div>
-    </div>
-</ul>
-
-
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Servicio al Cliente</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Quienes Somos</a>
-    </li>
-    </ul>
-    </div>
     </div>
   </nav>
 
