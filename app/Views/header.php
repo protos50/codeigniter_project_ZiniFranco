@@ -13,10 +13,20 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <!-- Include Font Awesome CSS file -->
   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" >
+
+
+
+
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+<body class="position-static">
+  <div class="position-static">
+  <header class="position-sticky fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-color-nav p-0">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <i class="navbar-brandLogo">
@@ -35,7 +45,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Productos </a>
 
-            <ul class="dropdown-menu w-100 text-center">
+            <ul class="bg-color-nav dropdown-menu w-100 text-center">
               <div class="container-fluid">
                 <div class="row w-100 justify-content-center">
                   <div class="col-6 col-md-3 col-sm-3">
@@ -86,3 +96,6 @@
       </div>
     </div>
   </nav>
+
+  </header>
+  

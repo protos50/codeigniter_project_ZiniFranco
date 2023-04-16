@@ -1,1 +1,5 @@
-<section><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga cupiditate veritatis minima qui temporibus, sed commodi quisquam, facere explicabo, deserunt non optio hic magni architecto odio sapiente amet autem aut.</p></section>
+<div class="bg-dark bg-gradient">
+    <div class="d-flex justify-content-center align-items-center">
+        <img src="assets/img/under-construction.jpg" class="img-fluid mx-auto" alt="page-under-construction">
+    </div>
+</div>
