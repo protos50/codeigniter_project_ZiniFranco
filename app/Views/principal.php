@@ -49,8 +49,46 @@
         A lo largo de nuestra trayectoria, hemos obtenido varios reconocimientos y logros en la región. Hemos sido galardonados con el premio al mejor servicio al cliente en nuestra categoría y hemos sido reconocidos por nuestra labor en el desarrollo de tecnologías sustentables para el hogar. Nos enorgullece saber que nuestros clientes confían en nosotros y en nuestros productos y que hemos logrado impactar positivamente en la vida de muchas personas en la región.</p>
 
       <div class="px-2 px-xl-5 px-md-4 ">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="assets/img/matebook-d-series-1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="assets/img/matebook-d-series-1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="assets/img/matebook-d-series-1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="assets/img/matebook-d-series-1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div class="card mb-3 justify-content-center">
+        <div class="card m-3 justify-content-center">
           <div class="row g-0 h-100 align-items-center">
             <div class="col-md-6 h-100">
               <img src="assets/img/img6.webp" alt="Smart Home Product" class="img-fluid h-100">
@@ -64,8 +102,54 @@
           </div>
         </div>
 
+        <div class="my-5">
+          <div class="row g-2">
+            <div class="col-md-12 col-lg-9 pb-md-2 pb-lg-0">
+              <div class="row g-2">
 
-      </div>
+                <div class="col-md-7">
+                  <div class="h-100">
+                    <img src="assets/img/matebook-d-series-1.jpg" class="img-fluid h-100" alt="...">
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <div class="h-100">
+                    <img src="assets/img/matebook-series-2.jpg" class="img-fluid h-100" alt="...">
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-md-12 col-lg-3">
+
+              <div class="row row-cols-lg-1 g-lg-3 g-md-2">
+
+                <div class="col-md-6">
+                  <div class="h-100">
+                    <img src="assets/img/img6.webp" class="img-fluid h-100" alt="...">
+
+                  </div>
+                </div>
+
+
+                <div class="col-md-6">
+
+                  <div class="h-100">
+                    <img src="assets/img/img6.webp" class="img-fluid h-100" alt="...">
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
 
 
     </section>

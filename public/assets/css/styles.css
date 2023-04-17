@@ -6,18 +6,20 @@
   background-color: #fff9f4;
 }
 
-
 .font-roboto {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .font-montserrat {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .font-notoSans {
-	font-family: 'Noto Sans', sans-serif;
-
+  font-family: "Noto Sans", sans-serif;
 }
+.font-lato {
+  font-family: "Lato", sans-serif;
+}
+
 .nav-item {
   position: relative;
 }
@@ -46,7 +48,7 @@
   width: 100%;
   left: 0;
   right: 0;
-  position: absolute;;
+  position: absolute;
   top: 100%;
   left: 0;
   z-index: 1000;
@@ -63,46 +65,35 @@
   opacity: 0.1 !important;
 }
 
-.carousel-control-next-icon, 
+.carousel-control-next-icon,
 .carousel-control-prev-icon {
   background-color: black;
 }
 
-.carousel-control-next-icon:hover, 
+.carousel-control-next-icon:hover,
 .carousel-control-prev-icon:hover {
   filter: invert(1);
 }
 
-.carousel-indicators > button { 
+.carousel-indicators > button {
   background-color: rgba(107, 103, 103, 0.898) !important;
 }
 
 .p-card > h5 {
-  font-size: max(2.5vw,12px);
+  font-size: max(2.5vw, 12px);
   font-weight: 900 !important;
   text-align: center;
 }
 
 .p-card > p {
-  font-size: max(1.25vw,12px);
+  font-size: max(1.25vw, 12px);
   text-align: center;
-}
-
-@media (max-width: 900px) {
-  .p-card > h5 {
-    font-size: 3vh
-  }
-
-  .p-card > p {
-    font-size: 2vh;
-  }
 }
 
 .gradiente-fondo {
   height: 30vw;
-  background: linear-gradient(to right, #F05F57, #360940);
+  background: linear-gradient(to right, #f05f57, #360940);
 }
-
 
 .term-container {
   position: relative;
@@ -114,11 +105,37 @@
   z-index: 1;
 }
 
-.term-container h3{
-  font-size: max(1.66vw,12px);
+.term-container h3 {
+  font-size: max(1.66vw, 12px);
   font-weight: bolder;
 }
-.term-container p, .term-container li{
-  font-size: max(1.33vw,10px);
+.term-container p,
+.term-container li {
+  font-size: max(1.33vw, 10px);
   text-align: justify;
+}
+
+
+
+/************************    Media Queries    *****************************/
+
+
+@media (max-width: 900px) {
+  .p-card > h5 {
+    font-size: 3vh;
+  }
+
+  .p-card > p {
+    font-size: 2vh;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .hero {
+    height: 43vw !important;
+  }
+  .sub-hero > h1 {
+    font-size: 2.1em !important;
+  }
 }
