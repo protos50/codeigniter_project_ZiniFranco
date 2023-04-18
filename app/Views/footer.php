@@ -13,10 +13,10 @@
         <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 mx-auto mt-1">
           <h5>Links Utiles</h5>
           <ul class="list-unstyled">
-            <li><a href="/codeigniter_project_ZiniFranco">Inicio</a></li>
-            <li><a href="/codeigniter_project_ZiniFranco/catalogo">Catálogo</a></li>
-            <li><a href="/codeigniter_project_ZiniFranco/nosotros">Sobre Nosotros</a></li>
-            <li><a href="/codeigniter_project_ZiniFranco/contacto">Contáctanos</a></li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/construction">Catálogo</a></li>
+            <li><a href="/nosotros">Sobre Nosotros</a></li>
+            <li><a href="/contacto">Contáctanos</a></li>
           </ul>
         </div>
 
@@ -52,9 +52,9 @@
         <!-- Grid column -->
         <div class="col-md-6">
           <ul class="list-inline float-md-right">
-            <li class="list-inline-item"><a href="#">Politicas de Privacidad</a></li>
-            <li class="list-inline-item"><a href="#">Terminos y Condiciones</a></li>
-            <li class="list-inline-item"><a href="#">Boton de Arrepentimiento</a></li>
+            <li class="list-inline-item"><a href="/construction">Politicas de Privacidad</a></li>
+            <li class="list-inline-item"><a href="/terminos">Terminos y Condiciones</a></li>
+            <li class="list-inline-item"><a href="/construction">Boton de Arrepentimiento</a></li>
           </ul>
         </div>
       </div>

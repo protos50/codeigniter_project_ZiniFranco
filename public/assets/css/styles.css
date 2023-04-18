@@ -115,6 +115,24 @@
   text-align: justify;
 }
 
+/* cambiar el color de fondo cuando se hace foco a un header del acordeon */
+button.accordion-button:not(.collapsed) {
+	color: /*var(--bs-accordion-active-color)*/ rgb(137, 7, 163) !important;
+	background-color: transparent !important;
+	box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 #ff6900 !important;
+}
+
+/* cambia el color de las flechas del acordeon a naranja */
+.accordion-button::after {
+  filter: invert(50%) sepia(100%) saturate(4468%) hue-rotate(347deg) brightness(85%) contrast(95%);
+}
+
+/* vuelve semi-violeta oscuro a los titulos del acordeon */
+.accordion-header > button{
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder !important;
+}
 
 
 /************************    Media Queries    *****************************/

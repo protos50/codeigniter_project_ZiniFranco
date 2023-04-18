@@ -38,4 +38,11 @@ class Home extends BaseController
         echo view('contacto');
         echo view('footer');
     }
+
+    public function underConstruction()
+    {
+        echo view('header');
+        echo view('under-construction');
+        echo view('footer');
+    }
 }

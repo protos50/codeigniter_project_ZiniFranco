@@ -34,6 +34,7 @@ $routes->get('/nosotros', 'Home::nosotros');
 $routes->get('/comercializacion', 'Home::comercializacion');
 $routes->get('/terminos', 'Home::terminos');
 $routes->get('/contacto', 'Home::contacto');
+$routes->get('/construction', 'Home::underConstruction');
 
 
 /*

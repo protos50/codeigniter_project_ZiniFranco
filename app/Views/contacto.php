@@ -8,9 +8,10 @@
         </div>
 
         <div class="container-fluid overflow-hidden">
-            <div class="row py-5 p-3">
+            <div class="row pb-3 p-3 m-sm-5 m-0">
                 <div class="col-md-7 col-12 p-md-0">
-                    <h2 class="text-center font-lato">Inicie una conversación o consulta</h2>
+                    <h2 class="font-lato">Contactanos</h2>
+                    <h3 class="font-lato" style="color: #ff6700; font-size: max(1.5vw, 20PX);">¡Ingresá tus datos y responderemos a la brevedad!</h3>
                     <form action="submit-form.php" method="POST">
                         <div class="form-group">
                             <label for="name">Name:</label>
@@ -39,8 +40,21 @@
                     <p><i class="fas fa-envelope mr-3"></i> smartH_ctes@gmail.com</p>
                     <p><i class="fas fa-phone mr-3"></i> + 54 379 4661 1164</p>
 
+
                 </div>
+                <hr class="hr hr-blurry mt-5" style="color: #ff6700"/>
             </div>
+
+        </div>
+
+
+        <!--Google map-->
+        <div>
+            <h2 class="mb-4 font-lato text-center">Donde nos encontramos</h2>
+            <div class="z-depth-1-half position-static pb-5" style="display: flex; justify-content: center;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5458.402382791545!2d-58.78746485146623!3d-27.48992682999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1681691303178!5m2!1ses-419!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <!--Google Maps-->
         </div>
     </section>
 
