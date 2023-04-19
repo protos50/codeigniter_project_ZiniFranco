@@ -49,7 +49,7 @@
 
 
         <!--Google map-->
-        <div>
+        <div class="container-fluid">
             <h2 class="mb-4 font-lato text-center">Donde nos encontramos</h2>
             <div class="z-depth-1-half position-static pb-5" style="display: flex; justify-content: center;">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5458.402382791545!2d-58.78746485146623!3d-27.48992682999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1681691303178!5m2!1ses-419!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
