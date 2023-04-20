@@ -1,4 +1,4 @@
-<section>
+<section class="bg-color">
     <div>
         <img src="assets/img/metodo-de-envio-2.png" class="img-fluid" alt="asd">
     </div>

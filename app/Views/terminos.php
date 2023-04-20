@@ -1,4 +1,4 @@
-<div class="position-relative" style="background-color: #eae1e1;">
+<div class="position-relative" style="background-color: #eae3de;">
     <div class="position-relative">
         <div class="gradiente-fondo position-relative">
 
@@ -6,7 +6,7 @@
         </div>
 
         
-        <div class="term-container font-montserrat">
+        <div class="term-container font-montserrat" style="background-color: #ece8e6; box-shadow: -1px 4px 43px -2px rgba(122,58,15,1);">
             
             <section class="container py-1 p-md-5 px-1 px-md-5">
                 <div class="row">

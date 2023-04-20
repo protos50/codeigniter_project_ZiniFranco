@@ -26,7 +26,7 @@
 <body class="position-static">
   <div class="position-static">
   <header class="position-sticky fixed-top">
-  <nav class="navbar navbar-expand-lg navbar-light bg-color-nav p-0">
+  <nav class="navbar navbar-expand-lg navbar-light bg-color-nav p-0" style="background-color: #ffeecd;">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <i class="navbar-brandLogo">
