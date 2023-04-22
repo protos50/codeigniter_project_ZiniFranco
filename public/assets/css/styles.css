@@ -25,6 +25,12 @@
   font-family: "Lato", sans-serif;
 }
 
+.font-raleway {
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
 .nav-item {
   position: relative;
 }
@@ -134,8 +140,6 @@ button.accordion-button:not(.collapsed) {
 
 .box {
   transition: box-shadow 0.4s;
-  /* background: #fff;
-  float: left; */
 }
 
 .box:hover {
@@ -149,9 +153,13 @@ button.accordion-button:not(.collapsed) {
   margin-right: 1vw;
 }
 
-.logo-mediosPagos:hover {
+.logos-scale:hover {
   scale: 110%;
   transition: 0.5s;
+}
+
+.envios-logo {
+  height: 3.5vw;
 }
 
 /************************    Media Queries    *****************************/
@@ -217,3 +225,20 @@ button.accordion-button:not(.collapsed) {
   }
 }
 
+@media (max-width: 900px) {
+  .envios-logo {
+    height: 4.70vw;
+  }
+}
+
+@media (max-width: 680px) {
+  .envios-logo {
+    height: 7vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .envios-logo {
+    height: 8.5vw;
+  }
+}
