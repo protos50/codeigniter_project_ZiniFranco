@@ -1,4 +1,4 @@
-<section class="bg-color">
+<section>
     <div>
         <img src="assets/img/metodo-de-envio-2.png" class="img-fluid" alt="asd">
     </div>
@@ -13,6 +13,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <img class="logo-mediosPagos img-fluid" src="assets/svg/visa.svg" alt="mastercar-logo">
                         Visa
                     </button>
                 </h2>
@@ -27,6 +28,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        <img class="logo-mediosPagos" src="assets/svg/visa.svg" alt="mastercar-logo">
                         Visa Débito
                     </button>
                 </h2>
@@ -36,7 +38,9 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
+
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img class="logo-mediosPagos" src="assets/svg/mastercard-2.svg" alt="mastercar-logo">
                         MasterCard
                     </button>
                 </h2>
@@ -51,6 +55,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        <img class="logo-mediosPagos" src="assets/svg/maestrocard.svg" alt="mastercar-logo">
                         MasterCard Débito
                     </button>
                 </h2>
@@ -61,6 +66,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingFive">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        <img class="logo-mediosPagos" src="assets/svg/mastercard-2.svg" alt="mastercar-logo">
                         Cabal
                     </button>
                 </h2>
@@ -75,6 +81,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingSix">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                        <img class="logo-mediosPagos" src="assets/svg/mastercard-2.svg" alt="mastercar-logo">
                         Naranja
                     </button>
                 </h2>
@@ -88,6 +95,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingSeven">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                        <img class="logo-mediosPagos" src="assets/svg/mastercard-2.svg" alt="mastercar-logo">
                         American Express
                     </button>
                 </h2>
@@ -103,7 +111,8 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingEight">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
-                        MercadoPago Wallet
+                        <img class="logo-mediosPagos" src="assets/svg/mercado-pago.svg" alt="mastercar-logo" style="width: 10%; height: 10%;">
+                        MercadoPago
                     </button>
                 </h2>
                 <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
@@ -114,7 +123,8 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingNine">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
-                        Plan Ahora 12: Tarjetas Bancarias Visa, MasterCard y Cabal
+                        <img class="logo-mediosPagos" src="assets/svg/mastercard-2.svg" alt="mastercar-logo">
+                        Plan Ahora 12
                     </button>
                 </h2>
                 <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">

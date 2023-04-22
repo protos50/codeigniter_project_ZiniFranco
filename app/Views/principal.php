@@ -1,5 +1,5 @@
-<div class="position-static">
-  <div class="bg-color font-montserrat">
+<div class="position-static bg-color">
+  <div class="font-montserrat">
     <div id="carouselExampleFade" class="carousel slide carousel-fade">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -33,122 +33,68 @@
     </div>
 
 
-    <!-- body -->
     <section>
-
-      <p class="text-justify">Bienvenidos a nuestra tienda en línea de productos inteligentes para el hogar. Somos un equipo apasionado por la tecnología y la comodidad en el hogar, y nos dedicamos a ofrecer productos de alta calidad que facilitan la vida cotidiana y mejoran la eficiencia en el hogar.
-
-        Nuestra misión es ofrecer soluciones innovadoras que permitan a nuestros clientes controlar y monitorear sus hogares de manera inteligente y eficiente. Trabajamos con marcas líderes en la industria para garantizar que nuestros productos sean confiables y de última generación.
-
-        Nos enorgullece ofrecer un servicio al cliente excepcional y estamos siempre dispuestos a ayudar a nuestros clientes a encontrar el producto adecuado para sus necesidades. Estamos comprometidos a proporcionar una experiencia de compra en línea fácil y segura, con envíos rápidos y seguimiento de pedidos para garantizar la satisfacción del cliente.
-
-        Gracias por visitar nuestra tienda en línea. Esperamos que encuentres los productos inteligentes para el hogar que estás buscando y que te conviertas en uno de nuestros clientes satisfechos.</p>
-
-      <p class="text-justify">Nuestra empresa de venta de productos inteligentes para el hogar fue fundada en la región hace más de una década con la visión de mejorar la vida de las personas a través de la tecnología innovadora. Desde entonces, hemos trabajado arduamente para ser líderes en el mercado de productos inteligentes para el hogar, ofreciendo a nuestros clientes una amplia variedad de productos y soluciones que les permiten simplificar sus tareas cotidianas y mejorar su calidad de vida.
-
-        A lo largo de nuestra trayectoria, hemos obtenido varios reconocimientos y logros en la región. Hemos sido galardonados con el premio al mejor servicio al cliente en nuestra categoría y hemos sido reconocidos por nuestra labor en el desarrollo de tecnologías sustentables para el hogar. Nos enorgullece saber que nuestros clientes confían en nosotros y en nuestros productos y que hemos logrado impactar positivamente en la vida de muchas personas en la región.</p>
-
-      <div class="px-2 px-xl-5 px-md-4">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="card box">
-              <img src="assets/img/matebook-d-series-1.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
+      <div class="card m-3 justify-content-center box bg-color">
+        <div class="row g-0 h-100 align-items-center">
+          <div class="col-md-6 h-100">
+            <img src="assets/img/img6.webp" alt="Smart Home Product" class="img-fluid h-100">
           </div>
-          <div class="col">
-            <div class="card box">
-              <img src="assets/img/matebook-d-series-1.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card box">
-              <img src="assets/img/matebook-d-series-1.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card box">
-              <img src="assets/img/matebook-d-series-1.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
+          <div class="col-md-6 h-100">
+            <div class="card-body d-flex flex-column justify-content-center align-content-center h-100 p-card">
+              <h5 class="card-title font-notoSans mb-4 text-center">Conoce a nuestro nuevo Robot Aspirador</h5>
+              <p class="card-text font-notoSans text-center">Te presentamos la solución perfecta para la limpieza de tu hogar, nuestro nuevo Robot Aspirador. Con sus sensores avanzados y tecnología de mapeo, este aspirador puede navegar por tu hogar con facilidad y limpiar tus pisos de manera eficiente.</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="card m-3 justify-content-center box">
-          <div class="row g-0 h-100 align-items-center">
-            <div class="col-md-6 h-100">
-              <img src="assets/img/img6.webp" alt="Smart Home Product" class="img-fluid h-100">
-            </div>
-            <div class="col-md-6 h-100">
-              <div class="card-body d-flex flex-column justify-content-center align-content-center h-100 p-card">
-                <h5 class="card-title font-notoSans mb-4 text-center">Conoce a nuestro nuevo Robot Aspirador</h5>
-                <p class="card-text font-notoSans text-center">Te presentamos la solución perfecta para la limpieza de tu hogar, nuestro nuevo Robot Aspirador. Con sus sensores avanzados y tecnología de mapeo, este aspirador puede navegar por tu hogar con facilidad y limpiar tus pisos de manera eficiente.</p>
+      <div class="my-5">
+        <div class="row g-2">
+          <div class="col-md-12 col-lg-9 pb-md-2 pb-lg-0">
+            <div class="row g-2">
+
+              <div class="col-md-7 box">
+                <div class="h-100">
+                  <img src="assets/img/matebook-d-series-1.jpg" class="img-fluid h-100" alt="...">
+                </div>
               </div>
+
+              <div class="col-md-5 box">
+                <div class="h-100">
+                  <img src="assets/img/matebook-series-2.jpg" class="img-fluid h-100" alt="...">
+
+                </div>
+              </div>
+
             </div>
           </div>
-        </div>
 
-        <div class="my-5">
-          <div class="row g-2">
-            <div class="col-md-12 col-lg-9 pb-md-2 pb-lg-0">
-              <div class="row g-2">
+          <div class="col-md-12 col-lg-3">
 
-                <div class="col-md-7">
-                  <div class="h-100">
-                    <img src="assets/img/matebook-d-series-1.jpg" class="img-fluid h-100" alt="...">
-                  </div>
+            <div class="row row-cols-lg-1 g-lg-3 g-md-2">
+
+              <div class="col-md-6 box">
+                <div class="h-100">
+                  <img src="assets/img/img6.webp" class="img-fluid h-100" alt="...">
+
                 </div>
-
-                <div class="col-md-5">
-                  <div class="h-100">
-                    <img src="assets/img/matebook-series-2.jpg" class="img-fluid h-100" alt="...">
-
-                  </div>
-                </div>
-
               </div>
-            </div>
 
-            <div class="col-md-12 col-lg-3">
 
-              <div class="row row-cols-lg-1 g-lg-3 g-md-2">
+              <div class="col-md-6 box">
 
-                <div class="col-md-6">
-                  <div class="h-100">
-                    <img src="assets/img/img6.webp" class="img-fluid h-100" alt="...">
+                <div class="h-100">
+                  <img src="assets/img/img6.webp" class="img-fluid h-100" alt="...">
 
-                  </div>
                 </div>
-
-
-                <div class="col-md-6">
-
-                  <div class="h-100">
-                    <img src="assets/img/img6.webp" class="img-fluid h-100" alt="...">
-
-                  </div>
-                </div>
-
               </div>
-            </div>
 
+            </div>
           </div>
 
         </div>
+
+      </div>
 
 
 

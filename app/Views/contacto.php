@@ -1,4 +1,4 @@
-<div class="bg-color font-roboto">
+<div class="font-roboto">
     <section>
         <div class="hero img-fluid d-flex flex-column justify-content-center align-content-center" style="background-image: url(assets/img/hero-contact-us.jpg); height: 26vw; background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
             <div class="sub-hero">
@@ -7,42 +7,49 @@
 
         </div>
 
-        <div class="container-fluid overflow-hidden">
+        <div class="container-fluid">
             <div class="row pb-3 p-3 m-sm-5 m-0">
-                <div class="col-md-7 col-12 p-md-0">
-                    <h2 class="font-lato">Contactanos</h2>
-                    <h3 class="font-lato" style="color: #ff6700; font-size: max(1.5vw, 20PX);">¡Ingresá tus datos y responderemos a la brevedad!</h3>
-                    <form action="submit-form.php" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone:</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block my-3">Submit</button>
-                    </form>
-                </div>
-
-                <div class="col-md-4 col-12 offset-md-1 p-md-0 py-3">
-
-                    <h6 class="text-uppercase mb-4 font-weight-bold font-lato">Información de Contactos</h6>
-                    <p><i class="fas fa-home mr-3"></i> Corrientes, Calle Sim 1560 - Barrio 1, Argentina</p>
-                    <p><i class="fas fa-envelope mr-3"></i> smartH_ctes@gmail.com</p>
-                    <p><i class="fas fa-phone mr-3"></i> + 54 379 4661 1164</p>
-
+                <!-- formulario de contacto -->
+                <div class="col-lg-8 col-12 border rounded border-dark bg-color-2">
+                    <div class="p-md-0 m-5">
+                        <h2 class="font-lato">Contactanos</h2>
+                        <h3 class="font-lato" style="color: #ff6700; font-size: max(1.5vw, 20PX);">¡Ingresá tus datos y responderemos a la brevedad!</h3>
+                        <form action="submit-form.php" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nombre:</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono:</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje:</label>
+                                <textarea id="message" name="message" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block my-3">Enviar</button>
+                        </form>
+                    </div>
 
                 </div>
-                <hr class="hr hr-blurry mt-5" style="color: #ff6700"/>
+
+                <!-- info de contacto -->
+                <div class="col-lg-3 ms-lg-5 mt-lg-0 mt-3 col-12 border rounded border-info bg-color-2 d-flex justify-content-center align-items-center">
+                    <div class="p-3 py-3  ">
+                        <h6 class="text-uppercase mb-5 pb-3 font-weight-bold font-lato">Información de Contactos</h6>
+                        <p><i class="fas fa-home mr-3"></i> Corrientes, Calle Sim 1560 - Barrio 1, Argentina</p>
+                        <p><i class="fas fa-envelope mr-3"></i> smartH_ctes@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 54 379 4661 1164</p>
+                    </div>
+
+
+
+                </div>
+                <hr class="hr hr-blurry mt-5" style="color: #ff6700" />
             </div>
 
         </div>
