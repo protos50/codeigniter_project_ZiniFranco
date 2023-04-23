@@ -31,6 +31,18 @@
   font-weight: 400;
 }
 
+  .separador {
+    background: linear-gradient(90deg, hsla(28, 96%, 62%, 0.945),hsl(28, 100%, 50%));
+    border-radius: 40px;
+    height: 20px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.75);
+  }
+
+  .separador-grande {
+    height: 100%;
+  }
+
 .nav-item {
   position: relative;
 }
@@ -59,8 +71,8 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: #898686 !important;
-  opacity: 0.025 !important;
+  background-color: #826060 !important;
+  opacity: 0.125 !important;
 }
 
 .carousel-control-prev:hover,
@@ -79,7 +91,7 @@
 }
 
 .carousel-indicators > button {
-  background-color: rgba(107, 103, 103, 0.898) !important;
+  background-color: rgba(111, 63, 63, 0.898) !important;
 }
 
 .p-card > h5 {
@@ -162,6 +174,19 @@ button.accordion-button:not(.collapsed) {
   height: 3.5vw;
 }
 
+.bordered-box {
+  border: 2px solid hsl(272, 94%, 48%);
+  border-radius: 10px;
+}
+
+.bordered-box-container {
+  position: relative;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #0208bf39;
+}
+
 /************************    Media Queries    *****************************/
 
 @media (max-width: 900px) {
@@ -242,3 +267,21 @@ button.accordion-button:not(.collapsed) {
     height: 8.5vw;
   }
 }
+
+.columna-intro {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.columna-intro {
+  transition: transform 0.5s ease-in-out;
+}
+
+.columna-intro:hover {
+  transform: translateX(10px);
+}
+

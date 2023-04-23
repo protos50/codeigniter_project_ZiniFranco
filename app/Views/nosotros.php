@@ -10,7 +10,7 @@
 
   <div class="p-5 m-5">
     <div class="d-flex justify-content-center align-items-center">
-      <img src="assets/img/matebook-d-series-1.jpg" alt="" style="width: 50%; height: 50%;">
+      <img src="assets/img/Store_Image.jpg" alt="" style="width: 50%; height: 50%;">
     </div>
   </div>
 

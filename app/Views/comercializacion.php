@@ -39,7 +39,7 @@
 
 
 
-
+    
                 <hr class="hr hr-blurry my-5" style="color: #ff6700" />
 
                 <h3 class="text-danger fw-bold">Retiro en Sucursal</h3>
@@ -57,23 +57,21 @@
                 <p>Recibirás un email con tu factura de compra para que puedas retirar el producto en la sucursal elegida. Podrás hacerlo en un plazo de 2 horas a 5 días hábiles, según se te haya anunciado en el proceso de compra.</p>
             </div>
         </div>
-        <hr class="hr hr-blurry my-5" style="color: #ff6700" />
+        <div class="separador my-5"></div>
     </div>
 
-    <div class="my-5" style="margin-left: 16.3vw; margin-right: 16.3vw;">
-    <div class="row m-auto d-flex justify-content-center img-fluid">
+    <div class="container my-5">
+        <div class="row m-auto d-flex justify-content-center img-fluid">
             <h3 class="col-12 mb-5 text-danger-emphasis fw-bold font-lato text-uppercase" style="font-size: 2.5vw;">Formas de Pago</h3>
             <img src="assets/img/banner-mediosPago.png" class="img-fluid mt-4" alt="todos-medios-pago" style="background-color: #2f90bd76; box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);">
         </div>
 
-        <hr class="hr hr-blurry my-5" style="color: #ff6700" />
-
-        <div class="row m-auto d-flex justify-content-center img-fluid" >
-            <h3 class="col-12 mb-5 text-bg-success fw-bold font-raleway" style="box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);">Ahora también aceptamos Mercado Pago y todos sus medios de pagos adheridos</h3>
-            <img class="col-12" src="assets/img/Banner_mercadopago.png" class="img-fluid mt-4 "style="background-color: #2f90bd76; box-shadow: -1px 4px 43px -2px rgb(102, 74, 55); alt="todos-medios-pago">
+        <div class="row m-auto d-flex justify-content-center img-fluid">
+            <h3 class="col-12 m-5 text-bg-success fw-bold font-raleway" style="box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);">Ahora también aceptamos Mercado Pago y todos sus medios de pagos adheridos</h3>
+            <img class="col-12" src="assets/img/Banner_mercadopago.png" class="img-fluid mt-4 " style="background-color: #2f90bd76; box-shadow: -1px 4px 43px -2px rgb(102, 74, 55); alt=" todos-medios-pago">
         </div>
 
-        <hr class="hr hr-blurry my-5" style="color: #ff6700" />
+        <div class="separador my-5"></div>
 
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <h2 class="my-4 font-montserrat" style="color:#e42729;">Medio de Pago y Tasas de Intereses</h2>
