@@ -26,22 +26,29 @@
 }
 
 .font-raleway {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-style: italic;
   font-weight: 400;
 }
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
 
-  .separador {
-    background: linear-gradient(90deg, hsla(28, 96%, 62%, 0.945),hsl(28, 100%, 50%));
-    border-radius: 40px;
-    height: 20px;
-    margin-top: 50px;
-    box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.75);
-  }
+.separador {
+  background: linear-gradient(
+    90deg,
+    hsla(28, 96%, 62%, 0.945),
+    hsl(28, 100%, 50%)
+  );
+  border-radius: 40px;
+  height: 20px;
+  margin-top: 50px;
+  box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+}
 
-  .separador-grande {
-    height: 100%;
-  }
+.separador-grande {
+  height: 100%;
+}
 
 .nav-item {
   position: relative;
@@ -184,9 +191,17 @@ button.accordion-button:not(.collapsed) {
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #0208bf39;
 }
 
+.box-shadow {
+  box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);
+}
+.card-img-top {
+  border-radius: 50% / 70% 50%;
+}
+.custom-card {
+  background-color: #f76e0610;
+}
 /************************    Media Queries    *****************************/
 
 @media (max-width: 900px) {
@@ -252,7 +267,7 @@ button.accordion-button:not(.collapsed) {
 
 @media (max-width: 900px) {
   .envios-logo {
-    height: 4.70vw;
+    height: 4.7vw;
   }
 }
 
@@ -284,4 +299,3 @@ button.accordion-button:not(.collapsed) {
 .columna-intro:hover {
   transform: translateX(10px);
 }
-

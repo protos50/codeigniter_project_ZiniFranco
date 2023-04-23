@@ -35,11 +35,6 @@
                     </div>
                 </div>
 
-
-
-
-
-    
                 <hr class="hr hr-blurry my-5" style="color: #ff6700" />
 
                 <h3 class="text-danger fw-bold">Retiro en Sucursal</h3>
@@ -68,13 +63,13 @@
 
         <div class="row m-auto d-flex justify-content-center img-fluid">
             <h3 class="col-12 m-5 text-bg-success fw-bold font-raleway" style="box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);">Ahora también aceptamos Mercado Pago y todos sus medios de pagos adheridos</h3>
-            <img class="col-12" src="assets/img/Banner_mercadopago.png" class="img-fluid mt-4 " style="background-color: #2f90bd76; box-shadow: -1px 4px 43px -2px rgb(102, 74, 55); alt=" todos-medios-pago">
+            <img class="col-12" src="assets/img/Banner_mercadopago.png" class="img-fluid mt-4 " style="background-color: #2f90bd76; box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);" alt=" todos-medios-pago">
         </div>
 
         <div class="separador my-5"></div>
 
         <div class="accordion accordion-flush" id="accordionFlushExample">
-            <h2 class="my-4 font-montserrat" style="color:#e42729;">Medio de Pago y Tasas de Intereses</h2>
+            <h2 class="my-4 font-montserrat" style="color: #e42729;">Medio de Pago y Tasas de Intereses</h2>
             <div style="box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">

@@ -14,7 +14,7 @@
                     <div class="p-md-0 m-5">
                         <h2 class="font-lato">Contactanos</h2>
                         <h3 class="font-lato" style="color: #ff6700; font-size: max(1.5vw, 20PX);">¡Ingresá tus datos y responderemos a la brevedad!</h3>
-                        <form action="submit-form.php" method="POST">
+                        <form >
                             <div class="form-group">
                                 <label for="name">Nombre:</label>
                                 <input type="text" id="name" name="name" class="form-control" required>

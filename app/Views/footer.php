@@ -33,10 +33,10 @@
           <h5>Mantente Conectado</h5>
           <p>Sigue a Smart Home Corrientes:</p>
           <ul class="list-inline">
-            <li class="list-inline-item"><a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-google"></i></a></li>
-            <li class="list-inline-item"><a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-google"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-instagram"></i></a></li>
 
           </ul>
 
