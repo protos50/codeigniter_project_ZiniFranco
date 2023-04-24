@@ -48,7 +48,7 @@
                       <h2 class="text-uppercase">Smart Home Corrientes</h1>
                         <p class="lead">Bienvenidos a la única y pionera tienda de la región y del país en ofrecer productos inteligentes para el hogar.</p>
                         <p><i> "Convierte tu hogar en un espacio inteligente con nuestros productos"</i></p>
-                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -101,12 +101,16 @@
           </div>
         </div>
 
+        <!-- test -->
 
 
+
+
+        <!-- test -->
         <div class="separador"></div>
       </div>
 
-    
+
 
       <div class="card m-3 justify-content-center box bg-color">
         <div class="row g-0 h-100 align-items-center">
