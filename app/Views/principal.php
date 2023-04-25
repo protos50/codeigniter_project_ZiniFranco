@@ -171,13 +171,13 @@
       <!--cards iluminacion -->
       <div class="my-5 card justify-content-center">
         <div class="row g-0 align-items-center iluminacion-inteligente ">
-          <div class="col-md-6 ">
+          <div class="col-lg-6 ">
             <div class="card-body d-flex flex-column justify-content-center align-content-center h-100 p-card ">
               <h5 class="card-title font-notoSans mb-4 text-center">Descubre la revolución en iluminación con nuestra nueva tecnología de Iluminación Inteligente</h5>
               <p class="card-text font-notoSans text-center">Con su capacidad de ajustar automáticamente el brillo y la tonalidad de la luz según tus preferencias y necesidades, nunca antes habías experimentado tanta comodidad y personalización en la iluminación de tu hogar. Además, con su conectividad inalámbrica y control remoto, nunca ha sido tan fácil controlar la iluminación de tu hogar desde cualquier lugar. Descubre la revolución en iluminación que te espera con nuestra Tecnología de Iluminación Inteligente.</p>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-lg-6">
             <img src="assets/img/iluminacion-inteligente.webp" alt="Smart Home Product" class="img-fluid h-100">
           </div>
           

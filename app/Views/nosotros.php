@@ -108,11 +108,11 @@
       <h4 class="font-lato p-3">Nuestro Staff</h4>
     </div>
 
-    <div class="row g-3">
+    <div class="row g-2">
 
-      <div class="col-12 col-sm-6 col-md-3 ">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3 ">
         <div class="card box custom-card">
-          <img src="assets/img/staff-1.jpg" class="card-img-top img-fluid" alt="...">
+          <img src="assets/img/staff-1.jpg" class="card-img-top img-fluid custom-img" alt="...">
           <div class="card-body box-shadow">
             <h5 class="card-title font-montserrat">Rose Eleanor Arbuthnot-Leslie</h5>
             <h6 class="card-title "><i> Gerente de ventas </i></h6>
@@ -122,9 +122,9 @@
       </div>
 
 
-      <div class="col-12 col-sm-6 col-md-3 ">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3 ">
         <div class="card box custom-card">
-          <img src="assets/img/staff-2.jpg" class="card-img-top img-fluid" alt="...">
+          <img src="assets/img/staff-2.jpg" class="card-img-top img-fluid custom-img" alt="...">
           <div class="card-body box-shadow">
             <h5 class="card-title font-montserrat">Franco Joaquin Zini</h5>
             <h6 class="card-title "><i> Fundador</i></h6>
@@ -133,9 +133,9 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-3 ">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3 ">
         <div class="card box custom-card">
-          <img src="assets/img/jefe-retrato.jpg" class="card-img-top img-fluid" alt="...">
+          <img src="assets/img/jefe-retrato.jpg" class="card-img-top img-fluid  custom-img" alt="...">
           <div class="card-body box-shadow">
             <h5 class="card-title font-montserrat">Fernando Jose Camara</h5>
             <h6 class="card-title "><i> Ingeniero de diseño</i></h6>
@@ -145,9 +145,9 @@
       </div>
 
 
-      <div class="col-12 col-sm-6 col-md-3 ">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3 ">
         <div class="card box custom-card">
-          <img src="assets/img/la-jefa.jpg" class="card-img-top img-fluid" alt="...">
+          <img src="assets/img/la-jefa.jpg" class="card-img-top img-fluid custom-img" alt="...">
           <div class="card-body box-shadow">
             <h5 class="card-title font-montserrat">Maria Montserrat Leal</h5>
             <h6 class="card-title "><i> Técnico de soporte</i></h6>
