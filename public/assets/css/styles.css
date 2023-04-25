@@ -203,17 +203,37 @@ button.accordion-button:not(.collapsed) {
   background-color: #f76e0610;
 }
 
+/* segundo carrusel, ajuste imagenes y efectos*/
+.columna-intro {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.columna-intro {
+  transition: transform 0.5s ease-in-out;
+}
+
+.columna-intro:hover {
+  transform: translateX(10px);
+}
+/*******************/
+.iluminacion-inteligente:hover{
+  background: linear-gradient(to right, #b557f0a5, #336ed4);
+  color: rgb(128, 40, 9);
+  scale: 101%;
+  transition: 1s;
+}
 /* test */
 .card-img-top {
   object-fit: cover;
   height: 250px;
 }
 
-@media (max-width: 991.98px) {
-  .card-img-top {
-    height: 200px;
-  }
-}
+
 
 
 /* test */
@@ -298,19 +318,8 @@ button.accordion-button:not(.collapsed) {
   }
 }
 
-.columna-intro {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.columna-intro {
-  transition: transform 0.5s ease-in-out;
-}
-
-.columna-intro:hover {
-  transform: translateX(10px);
+@media (max-width: 991.98px) {
+  .card-img-top {
+    height: 200px;
+  }
 }
