@@ -112,11 +112,11 @@
 
       <div class="col-12 col-sm-12 col-md-6 col-lg-3 ">
         <div class="card box custom-card">
-          <img src="assets/img/staff-1.jpg" class="card-img-top img-fluid custom-img" alt="...">
+          <img src="assets/img/staff-1.jpg" class="card-img-top img-fluid custom-img" style="text-align: justify;" alt="...">
           <div class="card-body box-shadow">
             <h5 class="card-title font-montserrat">Rose Eleanor Arbuthnot-Leslie</h5>
             <h6 class="card-title "><i> Gerente de ventas </i></h6>
-            <p class="card-text">Con más de 10 años de experiencia en el área de ventas, se unió a la empresa desde sus inicios como parte del equipo de ventas y gracias a su habilidad para liderar y gestionar equipos de ventas, fue promovido a su actual puesto de Director de Ventas.</p>
+            <p class="card-text" style="text-align: justify;">Con más de 10 años de experiencia en el área de ventas, se unió a la empresa desde sus inicios como parte del equipo de ventas y gracias a su habilidad para liderar y gestionar equipos de ventas, fue promovido a su actual puesto de Director de Ventas.</p>
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@
           <div class="card-body box-shadow">
             <h5 class="card-title font-montserrat">Franco Joaquin Zini</h5>
             <h6 class="card-title "><i> Fundador</i></h6>
-            <p class="card-text">Tras años de experiencia en el mercado de la electrónica y la tecnología, decidió emprender su propio proyecto y fundar la empresa de productos inteligentes para el hogar con el objetivo de ofrecer soluciones innovadoras y de alta calidad a los consumidores.</p>
+            <p class="card-text" style="text-align: justify;">Tras años de experiencia en el mercado de la electrónica y la tecnología, decidió emprender su propio proyecto y fundar la empresa de productos inteligentes para el hogar con el objetivo de ofrecer soluciones innovadoras y de alta calidad a los consumidores.</p>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@
           <div class="card-body box-shadow">
             <h5 class="card-title font-montserrat">Fernando Jose Camara</h5>
             <h6 class="card-title "><i> Ingeniero de diseño</i></h6>
-            <p class="card-text">Tras graduarse en ingeniería electrónica, trabajó en empresas del sector donde se especializó en el diseño de productos electrónicos. Se unió a la empresa de productos inteligentes para el hogar en su etapa inicial y ha liderado el diseño y conceptualización de los productos.</p>
+            <p class="card-text" style="text-align: justify;">Tras graduarse en ingeniería electrónica, trabajó en empresas del sector donde se especializó en el diseño de productos electrónicos. Se unió a la empresa de productos inteligentes para el hogar en su etapa inicial y ha liderado el diseño y conceptualización de los productos.</p>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@
           <div class="card-body box-shadow">
             <h5 class="card-title font-montserrat">Maria Montserrat Leal</h5>
             <h6 class="card-title "><i> Técnico de soporte</i></h6>
-            <p class="card-text">Con más de 5 años de experiencia en el soporte técnico y servicio al cliente, se unió a la empresa en la fase de lanzamiento de los productos, y gracias a su excelente atención al cliente y conocimientos técnicos fue promovido a su actual puesto de Especialista en Soporte Técnico.</p>
+            <p class="card-text" style="text-align: justify;">Con más de 5 años de experiencia en el soporte técnico y servicio al cliente, se unió a la empresa en la fase de lanzamiento de los productos, y gracias a su excelente atención al cliente y conocimientos técnicos fue promovido a su actual puesto de Especialista en Soporte Técnico.</p>
           </div>
         </div>
       </div>
