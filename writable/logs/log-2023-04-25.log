@@ -1,0 +1,33 @@
+CRITICAL - 2023-04-25 02:17:40 --> Undefined variable $tile1
+in APPPATH\Views\header.php on line 8.
+ 1 APPPATH\Views\header.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tile1', 'C:\\xampp\\htdocs\\codeigniter_project_ZiniFranco\\app\\Views\\header.php', 8)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codeigniter_project_ZiniFranco\\app\\Views\\header.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('header', [], true)
+ 5 APPPATH\Controllers\Home.php(11): view('header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-25 02:17:59 --> Undefined variable $tile
+in APPPATH\Views\header.php on line 8.
+ 1 APPPATH\Views\header.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tile', 'C:\\xampp\\htdocs\\codeigniter_project_ZiniFranco\\app\\Views\\header.php', 8)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codeigniter_project_ZiniFranco\\app\\Views\\header.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('header', [], true)
+ 5 APPPATH\Controllers\Home.php(11): view('header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-25 02:27:50 --> Undefined variable $title
+in APPPATH\Views\header.php on line 8.
+ 1 APPPATH\Views\header.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'C:\\xampp\\htdocs\\codeigniter_project_ZiniFranco\\app\\Views\\header.php', 8)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codeigniter_project_ZiniFranco\\app\\Views\\header.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('header', [], true)
+ 5 APPPATH\Controllers\Home.php(18): view('header')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->nosotros()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
