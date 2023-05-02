@@ -1,22 +1,65 @@
+.bg-color {
+  /* background-color: rgb(228, 228, 241); */
+  background-color: #eae3de;
+}
+
+.bg-color-2 {
+  background-color: rgb(215, 215, 239);
+}
+
+.bg-color-nav {
+  background-color: hsla(28, 96%, 62%, 0.945);
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.font-notoSans {
+  font-family: "Noto Sans", sans-serif;
+}
+.font-lato {
+  font-family: "Lato", sans-serif;
+}
+
+.font-raleway {
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.separador {
+  background: linear-gradient(
+    90deg,
+    hsla(28, 96%, 62%, 0.945),
+    hsl(28, 100%, 50%)
+  );
+  border-radius: 40px;
+  height: 20px;
+  margin-top: 50px;
+  box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+}
+
+.separador-grande {
+  height: 100%;
+}
+
 .nav-item {
   position: relative;
 }
-.nav-item:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  /* background-color: #ff6900; */
-  background-color: black;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
-}
-.nav-item:hover:before {
-  visibility: visible;
-  transform: scaleX(1);
+
+.nav-item:hover,
+.navbar-brandLogo:hover {
+  background-color: hsl(28, 100%, 60%);
+  border: hsla(28, 96%, 62%, 0.945);
+  border-radius: 2.33vw;
+  font-weight: 501;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -27,7 +70,7 @@
   width: 100%;
   left: 0;
   right: 0;
-  position: absolute;;
+  position: absolute;
   top: 100%;
   left: 0;
   z-index: 1000;
@@ -35,8 +78,8 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: #898686 !important;
-  opacity: 0.025 !important;
+  background-color: #826060 !important;
+  opacity: 0.125 !important;
 }
 
 .carousel-control-prev:hover,
@@ -44,17 +87,235 @@
   opacity: 0.1 !important;
 }
 
-.carousel-control-next-icon, 
+.carousel-control-next-icon,
 .carousel-control-prev-icon {
   background-color: black;
 }
 
-.carousel-control-next-icon:hover, 
+.carousel-control-next-icon:hover,
 .carousel-control-prev-icon:hover {
   filter: invert(1);
 }
 
-.carousel-indicators > button { 
-  background-color: rgba(107, 103, 103, 0.898) !important;
+.carousel-indicators > button {
+  background-color: rgba(111, 63, 63, 0.898) !important;
+}
+
+.p-card > h5 {
+  font-size: max(2.5vw, 12px);
+  font-weight: 900 !important;
+  text-align: center;
+}
+
+.p-card > p {
+  font-size: max(1.25vw, 14px);
+  text-align: center;
+}
+
+.gradiente-fondo {
+  height: 30vw;
+  background: linear-gradient(to right, #f05f57, #360940);
+}
+
+.term-container {
+  position: relative;
+  top: -15vw;
+  left: 15vw;
+  width: 70%;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+.term-container h3 {
+  font-size: max(1.66vw, 12px);
+  font-weight: bolder;
+}
+.term-container p,
+.term-container li {
+  font-size: max(1.33vw, 10px);
+  text-align: justify;
+}
+
+/* cambiar el color de fondo cuando se hace foco a un header del acordeon */
+button.accordion-button:not(.collapsed) {
+  color: /*var(--bs-accordion-active-color)*/ rgb(137, 7, 163) !important;
+  background-color: transparent !important;
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 #ff6900 !important;
+}
+
+/* cambia el color de las flechas del acordeon a naranja */
+.accordion-button::after {
+  filter: invert(50%) sepia(100%) saturate(4468%) hue-rotate(347deg)
+    brightness(85%) contrast(95%);
+}
+
+/* vuelve semi-violeta oscuro a los titulos del acordeon */
+.accordion-header > button {
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder !important;
+}
+
+.box {
+  transition: box-shadow 0.4s;
+}
+
+.box:hover {
+  box-shadow: -1px 4px 43px -2px rgb(191, 182, 176);
+}
+
+.logo-mediosPagos {
+  object-fit: cover;
+  width: 6%;
+  height: 6%;
+  margin-right: 1vw;
+}
+
+.logos-scale:hover {
+  scale: 110%;
+  transition: 0.5s;
+}
+
+.envios-logo {
+  height: 3.5vw;
+}
+
+.bordered-box {
+  border: 2px solid hsl(272, 94%, 48%);
+  border-radius: 10px;
+}
+
+.bordered-box-container {
+  position: relative;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box-shadow {
+  box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);
+}
+.card-img-top {
+  border-radius: 50% / 70% 50%;
+}
+.custom-card {
+  background-color: #f76e0610;
+}
+
+/**/
+.columna-intro {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.columna-intro {
+  transition: transform 0.5s ease-in-out;
+}
+
+.columna-intro:hover {
+  transform: translateX(10px);
+}
+
+.iluminacion-inteligente:hover{
+  background: linear-gradient(to right, #b557f0a5, #336ed4);
+  color: rgb(128, 40, 9);
+  scale: 101%;
+  transition: 1s;
+}
+/* test */
+
+
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* test */
+/************************    Media Queries    *****************************/
+
+@media (max-width: 900px) {
+  .p-card > h5 {
+    font-size: 3vh;
+  }
+
+  .p-card > p {
+    font-size: 2vh;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    height: 43vw !important;
+  }
+  .sub-hero > h1 {
+    font-size: 2.1em !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  .logo-mediosPagos {
+    width: 7.5%;
+    height: 7.5%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .logo-mediosPagos {
+    width: 9.5%;
+    height: 9.5%;
+  }
+}
+
+@media (max-width: 700px) {
+  .logo-mediosPagos {
+    width: 12%;
+    height: 12%;
+  }
+}
+
+@media (max-width: 620px) {
+  .logo-mediosPagos {
+    width: 17%;
+    height: 17%;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-mediosPagos {
+    width: 30%;
+    height: 30%;
+  }
+}
+
+@media (max-width: 300px) {
+  .logo-mediosPagos {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media (max-width: 900px) {
+  .envios-logo {
+    height: 4.7vw;
+  }
+}
+
+@media (max-width: 680px) {
+  .envios-logo {
+    height: 7vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .envios-logo {
+    height: 8.5vw;
+  }
 }
 
