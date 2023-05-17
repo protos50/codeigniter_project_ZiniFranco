@@ -36,6 +36,11 @@ $routes->get('/terminos', 'Home::terminos');
 $routes->get('/contacto', 'Home::contacto');
 $routes->get('/construction', 'Home::underConstruction');
 
+$routes->get('login', 'Login::index');
+$routes->post('login/process_login', 'Login::process_login');
+$routes->get('dashboard', 'Dashboard::index');
+$routes->get('logout', 'Login::logout');
+
 
 /*
  * --------------------------------------------------------------------
