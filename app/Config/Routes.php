@@ -36,11 +36,15 @@ $routes->get('/terminos', 'Home::terminos');
 $routes->get('/contacto', 'Home::contacto');
 $routes->get('/construction', 'Home::underConstruction');
 
+// rutas de login page
 $routes->get('login', 'Login::index');
 $routes->post('login/process_login', 'Login::process_login');
 $routes->get('dashboard', 'Dashboard::index');
 $routes->get('logout', 'Login::logout');
 
+// rutas de register page
+$routes->get('register', 'Register::index');
+$routes->post('register/process_registration', 'Register::process_registration');
 
 /*
  * --------------------------------------------------------------------
