@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
@@ -10,11 +11,14 @@ class Dashboard extends Controller
         // Check if the user is logged in
         if (!$this->isLoggedIn()) {
             // Redirect to the login page
-            return redirect()->to('login');
+            return redirect()->to(base_url('/login'));
         }
 
-        // Load the dashboard view
-        return view('dashboard_view');
+        // Carga la vista del dashboard
+        $data = ['title' => 'Smart Home Corrientes | Dashboard'];
+        echo view('header',  $data);
+        echo view('dashboard_view');
+        echo view('footer');
     }
 
     private function isLoggedIn()

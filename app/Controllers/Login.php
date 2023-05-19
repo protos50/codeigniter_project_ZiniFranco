@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\LoginModel;
@@ -8,32 +9,48 @@ class Login extends Controller
 {
     public function index()
     {
-        // Load the login view
-        return view('login_view');
+        // verifica si el usuario se encuentra logeado
+        if ($this->isLoggedIn()) {
+            // en caso estar logeado redirecciono al dashboard
+            return redirect()->to(base_url('/dashboard'));
+        }
+
+        // Vista login
+        $data = ['title' => 'Smart Home Corrientes | Login'];
+        echo view('header',  $data);
+        echo view('login_view');
+        echo view('footer');
+    }
+
+    // funcion que verifica si el usuario se encuentra en sesion
+    private function isLoggedIn()
+    {
+        $session = session();
+        return $session->has('user_id');
     }
 
     public function process_login()
     {
-        // Get user input
+        // obtener los datos del usuario
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        // Validate user credentials
+        // validar credenciales del ususario
         $loginModel = new LoginModel();
         $user = $loginModel->validateUser($username, $password);
 
         if ($user) {
-            // Set user session data
+            // establece los datos de la sesion del usuario
             $session = session();
             $session->set([
                 'user_id' => $user->id,
                 'username' => $user->usuario
             ]);
 
-            // Redirect to the dashboard or any other authorized page
-            return redirect()->to('dashboard');
+            // redirije al dashboard
+            return redirect()->to(base_url('/dashboard'));
         } else {
-            // Invalid login, show error message
+            // en caso de login invalido, muestra mensaje de error
             $data['error'] = 'Invalid username or password.';
             return view('login_view', $data);
         }
@@ -41,11 +58,11 @@ class Login extends Controller
 
     public function logout()
     {
-        // Destroy the user session
+        // destruye la sesion de usuario
         $session = session();
         $session->destroy();
 
-        // Redirect to the login page
-        return redirect()->to('login');
+        // redirige a la pagina del login
+        return redirect()->to(base_url('/login'));
     }
 }

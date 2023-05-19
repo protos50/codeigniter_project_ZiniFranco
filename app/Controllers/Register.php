@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\RegisterModel;
@@ -8,8 +9,11 @@ class Register extends Controller
 {
     public function index()
     {
-        // Load the registration view
-        return view('register_view');
+        // Carga vista del registro 
+        $data = ['title' => 'Smart Home Corrientes | Login'];
+        echo view('header',  $data);
+        echo view('register_view');
+        echo view('footer');
     }
 
     public function process_registration()
@@ -22,7 +26,7 @@ class Register extends Controller
             'usuario' => $this->request->getPost('usuario'),
             'pass' => $this->request->getPost('pass'),
             'perfil_id' => 2, // Default profile ID
-            'baja' => 'no' // Default value for the "baja" field
+            'baja' => 'no' // valor por defecto para el compo "baja" 
         ];
 
         // Validate user input if needed
@@ -32,6 +36,6 @@ class Register extends Controller
         $registerModel->save($data);
 
         // Redirect to the login page or any other page
-        return redirect()->to('login');
+        return redirect()->to(base_url('/login'));
     }
 }
