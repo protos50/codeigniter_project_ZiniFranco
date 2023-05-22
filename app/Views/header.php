@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-  
+
 </head>
 
 <body class="position-static bg-color">
@@ -101,7 +101,27 @@
               <li class="nav-item  p-2">
                 <a class="nav-link" href="/terminos">Términos y Usos</a>
               </li>
+
+              <li class="nav-item dropdown m-0 p-2">
+                <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-user"></i>
+                </a>
+                <ul class="dropdown-menu text-center" aria-labelledby="loginDropdown">
+                  <?php
+                  $session = session();
+                  if ($session->has('user_id')): ?>
+                    <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="/logout">Log out</a></li>
+                  <?php else: ?>
+                  <li><a class="dropdown-item" href="/login">Log in</a></li>
+                  <li><a class="dropdown-item" href="/register">Sign up</a></li>
+                  <?php endif; ?>
+                </ul>
+              </li>
+
             </ul>
+
+
           </div>
         </div>
       </nav>
