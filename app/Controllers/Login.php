@@ -43,16 +43,15 @@ class Login extends Controller
             // establece los datos de la sesion del usuario
             $session = session();
             $session->set([
-                'user_id' => $user->id,
+                'user_id' => $user->perfil_id,
                 'username' => $user->usuario
             ]);
 
             // redirije al dashboard
             return redirect()->to(base_url('/dashboard'));
         } else {
-            // en caso de login invalido, muestra mensaje de error
-            $data['error'] = 'Invalid username or password.';
-            return view('login_view', $data);
+            // en caso de login invalido, muestra mensaje de error(arreglar esto)
+            return redirect()->to(base_url('/login'));
         }
     }
 

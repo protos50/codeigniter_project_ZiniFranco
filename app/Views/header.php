@@ -22,6 +22,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 
+  <?php $session = session(); ?>
+
 </head>
 
 <body class="position-static bg-color">
@@ -49,45 +51,21 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
 
-              <!-- PROXIMAMENTE -->
-              <!-- <li class="nav-item dropdown position-static m-0  p-2">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Productos </a>
+              <li class="nav-item  p-2">
+                <a class="nav-link" href="/products">Catalogo</a>
+              </li>
 
-                <ul class="bg-color-nav dropdown-menu w-100 text-center">
-                  <div class="container-fluid">
-                    <div class="row w-100 justify-content-center">
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
+              <?php if ($session->user_id == 1) : ?>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/add">Agregar Producto</a>
+                </li>
 
-                      </div>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/user-list">Usuarios</a>
+                </li>
+              <?php endif; ?>
 
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets </a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
 
-                      </div>
-
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
-
-                      </div>
-
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
-
-                      </div>
-                    </div>
-                  </div>
-                </ul>
-              </li> -->
               <li class="nav-item  p-2">
                 <a class="nav-link" href="/nosotros">Quienes Somos</a>
               </li>
@@ -107,14 +85,12 @@
                   <i class="fas fa-user"></i>
                 </a>
                 <ul class="dropdown-menu text-center" aria-labelledby="loginDropdown">
-                  <?php
-                  $session = session();
-                  if ($session->has('user_id')): ?>
+                  <?php if ($session->has('user_id')) : ?>
                     <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
                     <li><a class="dropdown-item" href="/logout">Log out</a></li>
-                  <?php else: ?>
-                  <li><a class="dropdown-item" href="/login">Log in</a></li>
-                  <li><a class="dropdown-item" href="/register">Sign up</a></li>
+                  <?php else : ?>
+                    <li><a class="dropdown-item" href="/login">Log in</a></li>
+                    <li><a class="dropdown-item" href="/register">Sign up</a></li>
                   <?php endif; ?>
                 </ul>
               </li>

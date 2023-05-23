@@ -26,7 +26,7 @@ $routes->set404Override();
  * Route Definitions
  * --------------------------------------------------------------------
  */
-
+$session = session();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
@@ -45,6 +45,23 @@ $routes->get('logout', 'Login::logout');
 // rutas de register page
 $routes->get('register', 'Register::index');
 $routes->post('register/process_registration', 'Register::process_registration');
+
+
+// rutas del catalogo de los productos
+$routes->get('products', 'Products::index');
+
+// rutas para agregar productos
+
+// $routes->post('product/add', 'ProductADDController::add');
+// $routes->get('add', 'ProductADDController::add');
+
+$routes->get('add', 'ProductADDController::add', ['filter' => 'sessionFilter']);
+$routes->post('product/add', 'ProductADDController::add', ['filter' => 'sessionFilter']);
+
+// rutas para la lista de los usuarios, el cual solo puede acceder el administrador
+$routes->get('/user-list', 'AdminController::index', ['filter' => 'sessionFilter']);
+
+
 
 /*
  * --------------------------------------------------------------------
