@@ -28,27 +28,29 @@
     </style>
 
 <div class="container">
-    <h1 class="mt-4">Catalogo de Productos</h1>
-    
+    <h1 class="mt-4">Catálogo de Productos</h1>
+
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <?php if (!empty($products)): ?>
             <?php foreach ($products as $product): ?>
                 <div class="col">
                     <div class="card product-card">
                         <?php if (!empty($product['imagen'])): ?>
-                            <img src="<?php echo base_url('/assets/product_images/' . $product['imagen']); ?>" alt="Product Image">
+                            <img src="<?php echo base_url('/assets/product_images/' . $product['imagen']); ?>" alt="Product Image" class="card-img-top">
                         <?php endif; ?>
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $product['nombre']; ?></h5>
                             <p class="card-text"><?php echo $product['descripcion']; ?></p>
                             <p class="card-text price">Precio: $<?php echo $product['precio']; ?></p>
+                            <a href="<?php echo base_url('cart/add/' . $product['id']); ?>" class="btn btn-primary">Agregar al carrito</a>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>No products found.</p>
+            <p>No se encontraron productos.</p>
         <?php endif; ?>
     </div>
 </div>
+
 
