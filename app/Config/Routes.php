@@ -62,6 +62,9 @@ $routes->post('product/add', 'ProductADDController::add', ['filter' => 'sessionF
 $routes->get('/user-list', 'AdminController::index', ['filter' => 'sessionFilter']);
 
 
+$routes->get('/cart', 'CartController::viewCart');
+$routes->get('/cart/add/(:num)', 'CartController::addToCart/$1');
+
 
 /*
  * --------------------------------------------------------------------
