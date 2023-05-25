@@ -43,7 +43,8 @@ class CartController extends Controller
         }
 
         // Redirigir a la página del carrito
-        return redirect()->to('/cart');
+        // return redirect()->to('/cart');
+        return redirect()->to(base_url(('/cart')));
     }
 
     public function viewCart()

@@ -69,6 +69,7 @@
               <li class="nav-item  p-2">
                 <a class="nav-link" href="/nosotros">Quienes Somos</a>
               </li>
+
               <li class="nav-item  p-2">
                 <a class="nav-link" href="/comercializacion">Comercialización</a>
               </li>
@@ -79,7 +80,10 @@
               <li class="nav-item  p-2">
                 <a class="nav-link" href="/terminos">Términos y Usos</a>
               </li>
-
+              
+              <li class="nav-item  p-2">
+                <a class="nav-link" href="/cart">Carrito</a>
+              </li>
               <li class="nav-item dropdown m-0 p-2">
                 <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fas fa-user"></i>
@@ -87,10 +91,10 @@
                 <ul class="dropdown-menu text-center" aria-labelledby="loginDropdown">
                   <?php if ($session->has('user_id')) : ?>
                     <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
-                    <li><a class="dropdown-item" href="/logout">Log out</a></li>
+                    <li><a class="dropdown-item" href="/logout">Deslogearse</a></li>
                   <?php else : ?>
-                    <li><a class="dropdown-item" href="/login">Log in</a></li>
-                    <li><a class="dropdown-item" href="/register">Sign up</a></li>
+                    <li><a class="dropdown-item" href="/login">Logear</a></li>
+                    <li><a class="dropdown-item" href="/register">Registrar</a></li>
                   <?php endif; ?>
                 </ul>
               </li>

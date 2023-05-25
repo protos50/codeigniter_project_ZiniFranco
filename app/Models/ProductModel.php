@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use CodeIgniter\Model;
@@ -14,5 +15,10 @@ class ProductModel extends Model
         // Obtiene todos los productos de la base de datos
         return $this->findAll();
     }
+    
+    public function getProductById($productId)
+    {
+        // Obtiene un producto por su ID
+        return $this->find($productId);
+    }
 }
-
