@@ -13,14 +13,13 @@ class ProductADDController extends Controller
         helper('form');
 
         // If the form is submitted
-        //if ($this->request->getMethod(true) === 'POST') {
         if ($this->request->getPost()) {
-        //if ($this->request->getMethod() === 'post') {
             // Get the form input values
             $data = [
                 'nombre' => $this->request->getPost('nombre'),
                 'descripcion' => $this->request->getPost('descripcion'),
                 'precio' => $this->request->getPost('precio'),
+                'stock' => $this->request->getPost('stock'),
                 // Handle image upload and set the 'imagen' field accordingly
                 'imagen' => $this->handleImageUpload()
             ];
