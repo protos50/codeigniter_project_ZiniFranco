@@ -25,6 +25,11 @@
                     </div>
                     
                     <div class="mb-3">
+                        <label for="stock" class="form-label">Stock:</label>
+                        <input type="number" name="stock" class="form-control" required>
+                    </div>
+                    
+                    <div class="mb-3">
                         <label for="imagen" class="form-label">Imagen:</label>
                         <input type="file" name="imagen" class="form-control">
                     </div>
@@ -37,3 +42,4 @@
         </div>
     </div>
 </div>
+

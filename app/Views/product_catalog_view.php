@@ -26,6 +26,10 @@
         font-weight: bold;
     }
 
+    .product-card .stock {
+        font-size: 14px;
+        color: #888;
+    }
 
     /* estilos para el mensaje modal */
     .modal {
@@ -47,6 +51,10 @@
         padding: 20px;
         border: 1px solid #888;
         width: 300px;
+    }
+
+    .modal-content.error {
+        background-color: rgba(200, 0, 0, 0.8);
     }
 
     .modal-header {
@@ -73,8 +81,22 @@
     }
 </style>
 
+<!-- Mensaje de alerta -->
 <div class="container">
     <h1 class="mt-4">Catálogo de Productos</h1>
+
+    <?php if (!empty($cart)) : ?>
+        <div class="alert alert-info" role="alert">
+            Productos en el carrito:
+            <ul>
+                <?php foreach ($cart as $productId => $item) : ?>
+                    <li><?php echo $item['product']['nombre']; ?> (Cantidad: <?php echo $item['quantity']; ?>)</li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+
+
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <?php if (!empty($products)) : ?>
@@ -88,8 +110,14 @@
                             <h5 class="card-title"><?php echo $product['nombre']; ?></h5>
                             <p class="card-text"><?php echo $product['descripcion']; ?></p>
                             <p class="card-text price">Precio: $<?php echo $product['precio']; ?></p>
-                            <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
+                            <p class="card-text stock">Stock: <?php echo $product['stock']; ?></p>
+                            <?php if ($product['stock'] > 0) : ?>
 
+                                <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
+
+                            <?php else : ?>
+                                <button class="btn btn-primary" disabled>No disponible</button>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -98,23 +126,22 @@
             <p>No se encontraron productos.</p>
         <?php endif; ?>
     </div>
+</div>
 
-    <!-- Mensaje modal para indicar que el producto se agrego al carrito -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Producto Agregago al Carrito</h2>
-                <span class="close">&times;</span>
-            </div>
-            <div class="modal-body">
-                <p>El producto fué agregado al carrito exitosamente. Click en cualquier lugar para cerrar el mensaje.</p>
-            </div>
+<!-- Mensaje modal para indicar que el producto se agregó al carrito -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Producto Agregado al Carrito</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>El producto fue agregado al carrito exitosamente. Haz clic en cualquier lugar para cerrar el mensaje.</p>
         </div>
     </div>
 </div>
 
 <script>
-
     // script para cerrar el mensaje modal
 
     // Get the modal element
@@ -123,10 +150,27 @@
     // Get the <span> element that closes the modal
     var closeBtn = document.getElementsByClassName("close")[0];
 
-    // Function to show the modal
-    function showModal() {
+    // Function to show the modal with a custom message
+    function showModal(message) {
+        var modalContent = document.querySelector(".modal-content");
+        var modalTitle = modalContent.querySelector(".modal-title");
+        var modalBody = modalContent.querySelector(".modal-body");
+
+        // Update the modal title and body with the custom message
+        modalTitle.textContent = message;
+        modalBody.textContent = "Click en cualquier parte para continuar";
+
+        // Check the message and apply the corresponding class
+        if (message === "No se pueden agregar más unidades de este producto al carrito.") {
+            modalContent.classList.add("error");
+        } else {
+            modalContent.classList.remove("error");
+        }
+
         modal.style.display = "block";
     }
+
+
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener("click", function(event) {
@@ -140,43 +184,71 @@
         modal.style.display = "none";
     };
 
-    // Add an event listener to the document for "Add to Cart" button clicks
-    document.addEventListener("click", function(event) {
-        if (event.target.classList.contains("add-to-cart")) {
-            showModal();
-        }
-    });
-
-
-    // script que me permite agregar productos al carrito sin necesidad de que se rederidija a la vista del carrito automaticamente
-
     function addToCart(productId) {
-        // Crear una nueva instancia de XMLHttpRequest
-        var xhr = new XMLHttpRequest();
+        var cart = <?php echo isset($cart) ? json_encode($cart) : '{}'; ?>;
+        var products = <?php echo json_encode($products); ?>;
 
-        // Configurar la solicitud AJAX
-        xhr.open("GET", "<?php echo base_url('cart/add/'); ?>" + productId, true);
+        var quantity = 0;
 
-        // Configurar la función de devolución de llamada para manejar la respuesta
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    // La solicitud se completó con éxito, puedes realizar acciones adicionales si es necesario
-                    console.log("Producto agregado al carrito");
-                } else {
-                    // Ocurrió un error en la solicitud AJAX, manejarlo según tus necesidades
-                    console.error("Error al agregar el producto al carrito");
-                }
+        // Buscar el producto en el arreglo products por su ID
+        var product = products.find(function(p) {
+            return p.id == productId;
+        });
+
+        // Verificar si el producto existe
+        if (product) {
+            // Obtener el stock disponible del producto
+            var stock = product.stock;
+
+            // Verificar si el producto ya está en el carrito
+            if (typeof cart[productId] != 'undefined' && typeof cart[productId]['quantity'] != 'undefined') {
+                quantity = cart[productId]['quantity'];
             }
-        };
-
-        // Enviar la solicitud AJAX
-        xhr.send();
-
-        // Evitar el desplazamiento de la página
+            // Verificar si la cantidad excede el stock disponible
+            if (quantity >= stock) {
+                // Mostrar modal indicando que no se puede agregar más unidades al carrito
+                showModal("No se pueden agregar más unidades de este producto al carrito.");
+            } else {
+                // Realizar la solicitud AJAX utilizando una promesa
+                makeAjaxRequest("<?php echo base_url('cart/add/'); ?>" + productId)
+                    .then(function() {
+                        // Verificar nuevamente si la cantidad excede el stock disponible
+                        if (quantity >= stock) {
+                            // Mostrar modal indicando que no se puede agregar más unidades al carrito
+                            showModal("No se pueden agregar más unidades de este producto al carrito.");
+                        } else {
+                            // Mostrar modal de éxito
+                            showModal("El producto ha sido agregado al carrito.");
+                        }
+                    })
+                    .catch(function() {
+                        // Mostrar modal de error en caso de fallo en la solicitud AJAX
+                        showModal("Ha ocurrido un error al agregar el producto al carrito. Por favor, intenta nuevamente.");
+                    });
+            }
+        } else {
+            // Mostrar modal de error en caso de que el producto no exista
+            showModal("El producto seleccionado no existe.");
+        }
         event.preventDefault();
     }
 
-
+    function makeAjaxRequest(url) {
+        return new Promise(function(resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    resolve();
+                } else {
+                    reject();
+                }
+            };
+            xhr.onerror = function() {
+                reject();
+            };
+            xhr.send();
+        });
+    }
 
 </script>

@@ -44,6 +44,7 @@ class Login extends Controller
             $session = session();
             $session->set([
                 'user_id' => $user->perfil_id,
+                'id_usuario' => $user->id,
                 'username' => $user->usuario
             ]);
 

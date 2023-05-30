@@ -21,6 +21,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
   <?php $session = session(); ?>
 
@@ -93,8 +95,8 @@
                     <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
                     <li><a class="dropdown-item" href="/logout">Deslogearse</a></li>
                   <?php else : ?>
-                    <li><a class="dropdown-item" href="/login">Logear</a></li>
-                    <li><a class="dropdown-item" href="/register">Registrar</a></li>
+                    <li><a class="dropdown-item" href="/login">Ingresar</a></li>
+                    <li><a class="dropdown-item" href="/register">Registrarse</a></li>
                   <?php endif; ?>
                 </ul>
               </li>
