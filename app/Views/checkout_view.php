@@ -76,22 +76,21 @@
 
                     <div class="text-center">
                         <a class="btn btn-secondary" href="/cart">Volver al Carrito</a>
-                        <button class="btn btn-primary" id="confirmButton">Confirmar Compra</button>
+                        <button class="btn btn-primary" id="confirmButton">Finalizar Compra</button>
                     </div>
 
                 </div>
 
                 <div class="my-auto col-lg-12 col-xl-6">
-
                     <!-- Acordeon que contiene la lista de productos a comprar -->
                     <div class="accordion" id="checkoutAccordion">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="checkoutHeading">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#checkoutCollapse" aria-expanded="false" aria-controls="checkoutCollapse">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#checkoutCollapse" aria-expanded="true" aria-controls="checkoutCollapse">
                                     Detalle de productos en el Carrito
                                 </button>
                             </h2>
-                            <div id="checkoutCollapse" class="accordion-collapse collapse" aria-labelledby="checkoutHeading" data-bs-parent="#checkoutAccordion">
+                            <div id="checkoutCollapse" class="accordion-collapse collapse show" aria-labelledby="checkoutHeading" data-bs-parent="#checkoutAccordion">
                                 <div class="accordion-body">
                                     <table class="table">
                                         <thead>
@@ -102,7 +101,6 @@
                                                 <th>Precio total</th>
                                             </tr>
                                         </thead>
-
                                         <tbody>
                                             <?php foreach ($cart as $productId => $item) : ?>
                                                 <tr>
@@ -118,8 +116,8 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
 

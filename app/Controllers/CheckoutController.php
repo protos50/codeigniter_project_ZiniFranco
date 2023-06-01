@@ -63,7 +63,11 @@ class CheckoutController extends Controller
         $numero_tarjeta = null;
         if ($membership === 'tCredito' || $membership === 'tDebito') {
             $numero_tarjeta = $cardNumber;
+            if($membership === 'tDebito'){
+                $installments = 1;
+            }
         }
+
 
         $cabeceraCompraData = [
             'total' => $total,

@@ -65,16 +65,22 @@ $routes->get('/user-list', 'AdminController::index', ['filter' => 'sessionFilter
 // Ruta para mostrar el carrito de compras
 $routes->get('/cart', 'CartController::viewCart');
 
-// Ruta para agregar un producto al carrito de compras
+// Ruta para agregar un producto al carrito de compras.
 $routes->get('/cart/add/(:num)', 'CartController::addToCart/$1');
 
-// Ruta para aumentar la cantidad de un producto en el carrito de compras
+// Ruta para aumentar la cantidad de un producto en el carrito de compras.
 $routes->get('cart/increase_quantity/(:num)', 'CartController::increaseQuantity/$1');
 
-// Ruta para disminuir la cantidad de un producto en el carrito de compras
+// Ruta para disminuir la cantidad de un producto en el carrito de compras.
 $routes->get('cart/decrease_quantity/(:num)', 'CartController::decreaseQuantity/$1');
 
-// Ruta para mostrar el checkout de la compra antes de finalizar
+// Ruta para quitar elementos del carrito de compras.
+$routes->get('/cart/remove_product/(:segment)', 'CartController::removeProduct/$1');
+
+// Ruta para eliminar el carrito de compras de la sesion
+$routes->get('/cart/clear_cart', 'CartController::clearCart');
+
+// Ruta para mostrar el checkout de la compra antes de finalizar.
 $routes->get('/checkout', 'CheckoutController::index');
 
 $routes->post('/checkout/confirmPurchase', 'CheckoutController::confirmPurchase');

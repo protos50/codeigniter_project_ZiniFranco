@@ -45,14 +45,13 @@ class CartController extends Controller
             }
 
             // Actualizar el carrito en la sesión
-            
+
             session()->set('cart', $cart);
         }
 
         // Redirigir a la página del carrito
         //return redirect()->to(base_url('/cart'));
         return redirect()->back();
-
     }
 
     public function viewCart()
@@ -120,4 +119,22 @@ class CartController extends Controller
         return redirect()->to(base_url('/cart'));
     }
 
+    public function removeProduct($productId)
+    {
+        $cart = session()->get('cart');
+
+        if ($cart && isset($cart[$productId])) {
+            unset($cart[$productId]);
+            session()->set('cart', $cart);
+        }
+
+        return redirect()->to(base_url('/cart'));
+    }
+
+    public function clearCart()
+    {
+        session()->remove('cart');
+
+        return redirect()->to(base_url('/cart'));
+    }
 }

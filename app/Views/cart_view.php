@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container py-4">
     <h1>Carrito de Compras</h1>
 
     <?php if (session()->has('alert')) : ?>
@@ -29,12 +29,19 @@
                             <a href="<?php echo base_url('/cart/increase_quantity/' . $productId); ?>" class="btn btn-primary">+</a>
                             <a href="<?php echo base_url('/cart/decrease_quantity/' . $productId); ?>" class="btn btn-primary">-</a>
                         </td>
+                        <td><a href="<?php echo base_url('/cart/remove_product/' . $productId); ?>" class="btn btn-danger">Eliminar</a></td>
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
+
+        <div class="text-center py-1">
+            <a href="<?php echo base_url('/cart/clear_cart'); ?>" class="btn btn-danger">Vaciar Carrito</a>
+        </div>
+
         <div class="text-center">
-            <a href="/checkout" class="btn btn-primary">Continuar con la compra</a>
+            <a href="/checkout" class="btn btn-primary">Concretar compra</a>
         </div>
 
     <?php else : ?>
