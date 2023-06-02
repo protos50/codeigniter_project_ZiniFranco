@@ -14,4 +14,20 @@ class UserModel extends Model
     {
         return $this->findAll();
     }
+
+    public function getUserById($userId)
+    {
+        // Obtiene un usuario por su ID
+        return $this->find($userId);
+    }
+
+    public function updateUserBaja($userId, $baja)
+    {
+        $data = [
+            'baja' => $baja
+        ];
+
+        // Actualizar el registro en la base de datos
+        $this->update($userId, $data);
+    }
 }

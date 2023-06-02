@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container my-4">
     <h1 class="mb-4">Lista de Usuarios</h1>
 
     <?php if (!empty($users)) : ?>
@@ -12,6 +12,7 @@
                     <th>Usuario</th>
                     <th>Perfil ID</th>
                     <th>Baja</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -22,13 +23,24 @@
                         <td><?php echo $user['apellido']; ?></td>
                         <td><?php echo $user['email']; ?></td>
                         <td><?php echo $user['usuario']; ?></td>
-                        <td><?php echo $user['perfil_id']; ?></td>
+                        <td><?php if ($user['perfil_id'] == 1) {
+                                echo "Administrador";
+                            } else {
+                                echo "Usuario";
+                            } ?></td>
                         <td><?php echo $user['baja']; ?></td>
+                        <td>
+                            <?php if ($user['baja'] == 'si') : ?>
+                                <a href="<?php echo base_url('/admin/toggle_baja/' . $user['id']); ?>" class="btn btn-primary">Dar Alta</a>
+                            <?php else : ?>
+                                <a href="<?php echo base_url('/admin/toggle_baja/' . $user['id']); ?>" class="btn btn-danger">Dar Baja</a>
+                            <?php endif; ?>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     <?php else : ?>
-        <p>No users found.</p>
+        <p>No se encontraron usuarios registrados.</p>
     <?php endif; ?>
 </div>

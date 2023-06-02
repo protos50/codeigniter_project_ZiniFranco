@@ -58,8 +58,21 @@ $routes->get('products', 'Products::index');
 $routes->get('add', 'ProductADDController::add', ['filter' => 'sessionFilter']);
 $routes->post('product/add', 'ProductADDController::add', ['filter' => 'sessionFilter']);
 
+$routes->get('/add/(:num)', 'ProductADDController::add/$1', ['filter' => 'sessionFilter']);
+
+
+$routes->get('edit/(:num)', 'ProductEditController::edit/$1', ['filter' => 'sessionFilter']);
+$routes->post('update/(:num)', 'ProductEditController::update/$1', ['filter' => 'sessionFilter']);
+
+
+
+
+
+
 // rutas para la lista de los usuarios, el cual solo puede acceder el administrador
 $routes->get('/user-list', 'AdminController::index', ['filter' => 'sessionFilter']);
+$routes->get('/admin', 'AdminController::index');
+$routes->get('/admin/toggle_baja/(:num)', 'AdminController::toggleBaja/$1');
 
 
 // Ruta para mostrar el carrito de compras

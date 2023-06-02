@@ -8,11 +8,16 @@
   <title><?= $title ?></title>
 
 
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <!-- Include CSS file -->
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <!-- Include Font Awesome CSS file -->
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  Include Font Awesome CSS file
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css"> -->
+
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/bootstrap.min.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/fontawesome/css/all.min.css'); ?>">
+
+
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
@@ -59,33 +64,32 @@
 
               <?php if ($session->user_id == 1) : ?>
                 <li class="nav-item  p-2">
-                  <a class="nav-link" href="/add">Agregar Producto</a>
+                  <a class="nav-link" href="/user-list">Lista usuarios</a>
+                </li>
+              <?php endif; ?>
+
+              <?php if ($session->user_id == 2 || !$session->has('user_id')) : ?>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/nosotros">Quienes Somos</a>
                 </li>
 
                 <li class="nav-item  p-2">
-                  <a class="nav-link" href="/user-list">Usuarios</a>
+                  <a class="nav-link" href="/comercializacion">Comercialización</a>
+                </li>
+
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/contacto">Información de Contacto</a>
+                </li>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/terminos">Términos y Usos</a>
+                </li>
+
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/cart">Carrito</a>
                 </li>
               <?php endif; ?>
 
 
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/nosotros">Quienes Somos</a>
-              </li>
-
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/comercializacion">Comercialización</a>
-              </li>
-
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/contacto">Información de Contacto</a>
-              </li>
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/terminos">Términos y Usos</a>
-              </li>
-              
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/cart">Carrito</a>
-              </li>
               <li class="nav-item dropdown m-0 p-2">
                 <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fas fa-user"></i>

@@ -81,9 +81,15 @@
     }
 </style>
 
-<!-- Mensaje de alerta -->
+
 <div class="container">
-    <h1 class="mt-4">Catálogo de Productos</h1>
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="mt-4">Catálogo de Productos</h1>
+        <?php if (session()->user_id == 1) : ?>
+            <a class="btn btn-primary mt-4" href="/add">Añadir un Producto</a>
+        <?php endif; ?>
+
+    </div>
 
     <?php if (!empty($cart)) : ?>
         <div class="alert alert-info" role="alert">
@@ -93,6 +99,8 @@
                     <li><?php echo $item['product']['nombre']; ?> (Cantidad: <?php echo $item['quantity']; ?>)</li>
                 <?php endforeach; ?>
             </ul>
+
+
         </div>
     <?php endif; ?>
 
@@ -113,10 +121,24 @@
                             <p class="card-text stock">Stock: <?php echo $product['stock']; ?></p>
                             <?php if ($product['stock'] > 0) : ?>
 
-                                <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
+
+                                    <?php if (session()->user_id == 1) { ?>
+                                        <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
+                                    <?php } ?>
+
+                                </div>
 
                             <?php else : ?>
-                                <button class="btn btn-primary" disabled>No disponible</button>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-primary" disabled>No disponible</button>
+
+                                    <?php if (session()->user_id == 1) { ?>
+                                        <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
+                                    <?php } ?>
+
+                                </div>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -250,5 +272,4 @@
             xhr.send();
         });
     }
-
 </script>
