@@ -14,7 +14,7 @@
           <h5>Links Utiles</h5>
           <ul class="list-unstyled">
             <li><a href="/">Inicio</a></li>
-            <li><a href="/construction">Catálogo</a></li>
+            <li><a href="/products">Catálogo</a></li>
             <li><a href="/nosotros">Sobre Nosotros</a></li>
             <li><a href="/contacto">Contáctanos</a></li>
           </ul>
@@ -65,7 +65,8 @@
 
 
 <!-- Bootstrap JS-->
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
+
 </body>
 
 </html>

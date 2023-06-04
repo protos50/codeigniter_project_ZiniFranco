@@ -8,11 +8,16 @@
   <title><?= $title ?></title>
 
 
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <!-- Include CSS file -->
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <!-- Include Font Awesome CSS file -->
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  Include Font Awesome CSS file
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css"> -->
+
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/bootstrap.min.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/fontawesome/css/all.min.css'); ?>">
+
+
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
@@ -21,6 +26,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <?php $session = session(); ?>
 
 </head>
 
@@ -49,72 +58,52 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
 
-              <!-- PROXIMAMENTE -->
-              <!-- <li class="nav-item dropdown position-static m-0  p-2">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Productos </a>
-
-                <ul class="bg-color-nav dropdown-menu w-100 text-center">
-                  <div class="container-fluid">
-                    <div class="row w-100 justify-content-center">
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
-
-                      </div>
-
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets </a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
-
-                      </div>
-
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
-
-                      </div>
-
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
-
-                      </div>
-                    </div>
-                  </div>
-                </ul>
-              </li> -->
               <li class="nav-item  p-2">
-                <a class="nav-link" href="/nosotros">Quienes Somos</a>
-              </li>
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/comercializacion">Comercialización</a>
+                <a class="nav-link" href="/products">Catalogo</a>
               </li>
 
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/contacto">Información de Contacto</a>
-              </li>
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/terminos">Términos y Usos</a>
-              </li>
+              <?php if ($session->user_id == 1) : ?>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/user-list">Lista usuarios</a>
+                </li>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/cabecera_compra">Ventas</a>
+                </li>
+              <?php endif; ?>
+
+              <?php if ($session->user_id == 2 || !$session->has('user_id')) : ?>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/nosotros">Quienes Somos</a>
+                </li>
+
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/comercializacion">Comercialización</a>
+                </li>
+
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/contacto">Información de Contacto</a>
+                </li>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/terminos">Términos y Usos</a>
+                </li>
+
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/cart">Carrito</a>
+                </li>
+              <?php endif; ?>
+
 
               <li class="nav-item dropdown m-0 p-2">
                 <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fas fa-user"></i>
                 </a>
                 <ul class="dropdown-menu text-center" aria-labelledby="loginDropdown">
-                  <?php
-                  $session = session();
-                  if ($session->has('user_id')): ?>
+                  <?php if ($session->has('user_id')) : ?>
                     <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
-                    <li><a class="dropdown-item" href="/logout">Log out</a></li>
-                  <?php else: ?>
-                  <li><a class="dropdown-item" href="/login">Log in</a></li>
-                  <li><a class="dropdown-item" href="/register">Sign up</a></li>
+                    <li><a class="dropdown-item" href="/logout">Deslogearse</a></li>
+                  <?php else : ?>
+                    <li><a class="dropdown-item" href="/login">Ingresar</a></li>
+                    <li><a class="dropdown-item" href="/register">Registrarse</a></li>
                   <?php endif; ?>
                 </ul>
               </li>
