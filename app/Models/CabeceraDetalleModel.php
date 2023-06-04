@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace App\Models;
 
 use CodeIgniter\Model;
@@ -16,4 +17,10 @@ class CabeceraDetalleModel extends Model
         'importe_total',
         'fecha'
     ];
+
+    public function getDetallesByCompraId($compraId)
+    {
+        // Obtiene los detalles de una compra por su ID
+        return $this->where('id_compra', $compraId)->findAll();
+    }
 }

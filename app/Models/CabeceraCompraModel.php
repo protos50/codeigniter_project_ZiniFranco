@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace App\Models;
 
 use CodeIgniter\Model;
@@ -17,4 +18,10 @@ class CabeceraCompraModel extends Model
         'direccion',
         'fecha_alta'
     ];
+
+    public function getCompraById($compraId)
+    {
+        // Obtiene una compra por su ID
+        return $this->find($compraId);
+    }
 }

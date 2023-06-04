@@ -107,9 +107,53 @@
 
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <?php $hayAlgunProducto = false; ?>
         <?php if (!empty($products)) : ?>
             <?php foreach ($products as $product) : ?>
-                <div class="col">
+
+                <!-- A los usuarios solo se muestran las cards de productos que hay en stock -->
+                <?php if ($product['stock'] > 0) : ?>
+                    <?php $hayAlgunProducto = true; ?>
+                    <div class="col">
+                        <div class="card product-card">
+                            <?php if (!empty($product['imagen'])) : ?>
+                                <img src="<?php echo base_url('/assets/product_images/' . $product['imagen']); ?>" alt="Product Image">
+                            <?php endif; ?>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $product['nombre']; ?></h5>
+                                <p class="card-text"><?php echo $product['descripcion']; ?></p>
+                                <p class="card-text price">Precio: $<?php echo $product['precio']; ?></p>
+                                <p class="card-text stock">Stock: <?php echo $product['stock']; ?></p>
+                                <?php if ($product['stock'] > 0) : ?>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <?php if (session()->has('user_id')) { ?>
+                                            <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
+                                        <?php } ?>
+
+                                        <?php if (session()->user_id == 1) { ?>
+                                            <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
+                                        <?php } ?>
+
+                                    </div>
+
+                                <?php else : ?>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-primary" disabled>No disponible</button>
+
+                                        <?php if (session()->user_id == 1) { ?>
+                                            <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
+                                        <?php } ?>
+
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Adicional a las otras cards con este condicional tambien se muestrarán las cards con stock 0 a los administradores  -->
+                <?php if ($product['stock'] == 0 && session()->user_id == 1) : ?>
                     <div class="card product-card">
                         <?php if (!empty($product['imagen'])) : ?>
                             <img src="<?php echo base_url('/assets/product_images/' . $product['imagen']); ?>" alt="Product Image">
@@ -122,7 +166,7 @@
                             <?php if ($product['stock'] > 0) : ?>
 
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
+                                        <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
 
                                     <?php if (session()->user_id == 1) { ?>
                                         <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
@@ -142,8 +186,14 @@
                             <?php endif; ?>
                         </div>
                     </div>
-                </div>
+
+                <?php endif; ?>
+
             <?php endforeach; ?>
+
+            <?php if (!$hayAlgunProducto) { ?>
+                <p>No se encontraron productos.</p>
+            <?php } ?>
         <?php else : ?>
             <p>No se encontraron productos.</p>
         <?php endif; ?>

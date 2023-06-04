@@ -18,6 +18,16 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección para Envíos(opcional):</label>
+                            <input type="text" name="direccion" id="direccion" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono(opcional):</label>
+                            <input type="text" name="telefono" id="telefono" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
                             <label for="email" class="form-label">Email:</label>
                             <input type="email" name="email" id="email" class="form-control" required>
                         </div>

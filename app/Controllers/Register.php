@@ -18,10 +18,22 @@ class Register extends Controller
 
     public function process_registration()
     {
+        $direccion = $this->request->getPost('direccion');
+        $telefono = $this->request->getPost('telefono');
+
+        if ($direccion == '') {
+            $direccion = "NO REGISTRADO";
+        } 
+
+        if ($telefono == '') {
+            $telefono = "NO REGISTRADO";
+        } 
         // Get user input
         $data = [
             'nombre' => $this->request->getPost('nombre'),
             'apellido' => $this->request->getPost('apellido'),
+            'direccion' => $direccion,
+            'telefono' => $telefono,
             'email' => $this->request->getPost('email'),
             'usuario' => $this->request->getPost('usuario'),
             'pass' => $this->request->getPost('pass'),

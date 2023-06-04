@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CabeceraCompraModel;
 use App\Models\CabeceraDetalleModel;
-use CodeIgniter\CLI\Console;
+use App\Models\ProductModel;
 use CodeIgniter\Controller;
 
 class CheckoutController extends Controller
@@ -39,41 +39,32 @@ class CheckoutController extends Controller
         // Verifica si el usuario está logueado
         if (!$this->isLoggedIn()) {
             // Si no está logueado, redirecciona al login
-            //return redirect()->to(base_url('/login'));
             return $this->response->setJSON(['redirectUrl' => base_url('/login')]);
         }
 
         // Obtener los datos del formulario
         $membership = $this->request->getPost('membership');
-        //$total = $this->request->getPost('total');
-        $total = $this->calculateTotal($cart);
         $cardNumber = $this->request->getPost('cardNumber');
-        //$expirationDate = $this->request->getPost('expirationDate');
-        //$cvv = $this->request->getPost('cvv');
         $installments = $this->request->getPost('installments');
-        //$cardholderName = $this->request->getPost('cardholderName');
-        //$dniNumber = $this->request->getPost('dniNumber');
-
 
         // Crea un registro en la tabla cabecera_compra
         $cabeceraCompraModel = new CabeceraCompraModel();
         $cabeceraDetalleModel = new CabeceraDetalleModel();
 
-        // se verifica si el pago es con alguna de las tarjetas. si es asi se manda el número, sino se manda null
-        $numero_tarjeta = null;
+        // Se verifica si el pago es con alguna de las tarjetas. Si es así, se guarda el número de tarjeta; de lo contrario, se guarda null
+        $numeroTarjeta = null;
         if ($membership === 'tCredito' || $membership === 'tDebito') {
-            $numero_tarjeta = $cardNumber;
-            if($membership === 'tDebito'){
+            $numeroTarjeta = $cardNumber;
+            if ($membership === 'tDebito') {
                 $installments = 1;
             }
         }
 
-
         $cabeceraCompraData = [
-            'total' => $total,
+            'total' => $this->calculateTotal($cart),
             'id_usuario' => session()->get('id_usuario'),
             'metodo_pago' => $membership,
-            'numero_tarjeta' => $numero_tarjeta,
+            'numero_tarjeta' => $numeroTarjeta,
             'cuotas' => $installments,
             'envio' => null,
             'direccion' => null,
@@ -82,16 +73,32 @@ class CheckoutController extends Controller
 
         $cabeceraCompraId = $cabeceraCompraModel->insert($cabeceraCompraData);
 
-
-        // Crea registros en la tabla cabecera_detalle
+        // Actualizar el stock de los productos y crear registros en la tabla cabecera_detalle
+        $productModel = new ProductModel();
         foreach ($cart as $productId => $item) {
+            $quantity = $item['quantity'];
+
+            // Obtener la cantidad actual del producto
+            $product = $productModel->getProductById($productId);
+            $currentStock = $product['stock'];
+
+            // Calcular la nueva cantidad de stock
+            $newStock = $currentStock - $quantity;
+
+            $data = [
+                'stock' => $newStock
+            ];
+
+            // Actualizar el stock del producto en la tabla
+            $productModel->update($productId, $data);
+
             $cabeceraDetalleData = [
                 'id_compra' => $cabeceraCompraId,
                 'id_producto' => $productId,
                 'nombre' => $item['product']['nombre'],
-                'cantidad' => $item['quantity'],
+                'cantidad' => $quantity,
                 'importe_unitario' => $item['product']['precio'],
-                'importe_total' => $item['quantity'] * $item['product']['precio'],
+                'importe_total' => $quantity * $item['product']['precio'],
                 'fecha' => date('Y-m-d H:i:s')
             ];
 
@@ -101,11 +108,8 @@ class CheckoutController extends Controller
         // Elimina el carrito de la sesión
         session()->remove('cart');
 
-
-        //session()->setFlashdata('confirmationData', $data);
         return $this->response->setJSON(['redirectUrl' => base_url('/confirmation')]);
     }
-
 
     // Calcula el total de la compra a partir de los datos del carrito
     private function calculateTotal($cart)

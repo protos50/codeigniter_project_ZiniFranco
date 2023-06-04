@@ -8,6 +8,8 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
+                    <th>Direccion</th>
+                    <th>Teléfono</th>
                     <th>Email</th>
                     <th>Usuario</th>
                     <th>Perfil ID</th>
@@ -21,6 +23,8 @@
                         <td><?php echo $user['id']; ?></td>
                         <td><?php echo $user['nombre']; ?></td>
                         <td><?php echo $user['apellido']; ?></td>
+                        <td><?php echo $user['direccion'];?></td>
+                        <td><?php echo $user['telefono'];?></td>
                         <td><?php echo $user['email']; ?></td>
                         <td><?php echo $user['usuario']; ?></td>
                         <td><?php if ($user['perfil_id'] == 1) {
@@ -31,9 +35,9 @@
                         <td><?php echo $user['baja']; ?></td>
                         <td>
                             <?php if ($user['baja'] == 'si') : ?>
-                                <a href="<?php echo base_url('/admin/toggle_baja/' . $user['id']); ?>" class="btn btn-primary">Dar Alta</a>
+                                <a href="<?php echo base_url('/admin/toggle_baja/' . $user['id']); ?>" class="btn btn-primary">Dar de Alta</a>
                             <?php else : ?>
-                                <a href="<?php echo base_url('/admin/toggle_baja/' . $user['id']); ?>" class="btn btn-danger">Dar Baja</a>
+                                <a href="<?php echo base_url('/admin/toggle_baja/' . $user['id']); ?>" class="btn btn-danger">Dar de Baja</a>
                             <?php endif; ?>
                         </td>
                     </tr>

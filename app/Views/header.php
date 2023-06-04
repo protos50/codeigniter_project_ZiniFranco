@@ -66,6 +66,9 @@
                 <li class="nav-item  p-2">
                   <a class="nav-link" href="/user-list">Lista usuarios</a>
                 </li>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="/cabecera_compra">Ventas</a>
+                </li>
               <?php endif; ?>
 
               <?php if ($session->user_id == 2 || !$session->has('user_id')) : ?>
