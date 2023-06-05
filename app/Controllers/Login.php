@@ -45,7 +45,10 @@ class Login extends Controller
             $session->set([
                 'user_id' => $user->perfil_id,
                 'id_usuario' => $user->id,
-                'username' => $user->usuario
+                'username' => $user->usuario,
+                'nombre' => $user->nombre,
+                'apellido' => $user->apellido,
+                'email' => $user->email,
             ]);
 
             // redirije al dashboard

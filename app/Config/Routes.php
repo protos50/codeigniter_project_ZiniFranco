@@ -104,6 +104,9 @@ $routes->get('/factura/(:num)', 'FacturaController::showFactura/$1');
 // Ruta para mostrar todos los registros de la tabla "cabecera_compra"
 $routes->get('/cabecera_compra', 'CabeceraCompraController::index', ['filter' => 'sessionFilter']);
 
+$routes->post('/guardar_datos', 'FormController::guardarDatos');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

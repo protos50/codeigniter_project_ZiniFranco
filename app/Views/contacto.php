@@ -1,3 +1,5 @@
+<?php $session = session(); ?>
+
 <div class="font-roboto">
     <section>
         <div class="hero img-fluid d-flex flex-column justify-content-center align-content-center" style="background-image: url(assets/img/hero-contact-us.jpg); height: 26vw; background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
@@ -14,14 +16,14 @@
                     <div class="p-md-0 m-5">
                         <h2 class="font-lato">Contactanos</h2>
                         <h3 class="font-lato" style="color: #ff6700; font-size: max(1.5vw, 20PX);">¡Ingresá tus datos y responderemos a la brevedad!</h3>
-                        <form >
+                        <form action="<?= site_url('/guardar_datos') ?>" method="post">
                             <div class="form-group">
                                 <label for="name">Nombre:</label>
-                                <input type="text" id="name" name="name" class="form-control" required>
+                                <input type="text" id="name" name="name" class="form-control" value="<?php echo $session->has('id_usuario') ? $session->get('nombre', '') : ''; ?>" <?php echo $session->has('id_usuario') ? 'readonly' : ''; ?> required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" class="form-control" required>
+                                <input type="email" id="email" name="email" class="form-control" value="<?php echo $session->has('id_usuario') ? $session->get('email', '') : ''; ?>" <?php echo $session->has('id_usuario') ? 'readonly' : ''; ?> required>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Teléfono:</label>
@@ -34,6 +36,10 @@
                             <button type="submit" class="btn btn-primary btn-block my-3">Enviar</button>
                         </form>
                     </div>
+
+
+
+
 
                 </div>
 
