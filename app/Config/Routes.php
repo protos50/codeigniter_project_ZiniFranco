@@ -106,7 +106,13 @@ $routes->get('/cabecera_compra', 'CabeceraCompraController::index', ['filter' =>
 
 $routes->post('/guardar_datos', 'FormController::guardarDatos');
 
+// app/Config/Routes.php
 
+$routes->get('/messages', 'MessagesController::index');
+$routes->post('/markAsRead/(:num)', 'MessagesController::toggleReadStatus/$1');
+
+$routes->get('/messages_readed', 'MessagesController::mensajesLeidos');
+$routes->post('/markAsRead/(:num)', 'MessagesController::toggleReadStatus/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
