@@ -61,9 +61,9 @@
                                         <td class="center"><?php echo $contador; ?></td>
                                         <td class="center"><?php echo $producto['detalle']['id_producto']; ?></td>
                                         <td class="center"><?php echo $producto['detalle']['nombre']; ?></td>
-                                        <td class="right"><?php echo $producto['detalle']['importe_unitario']; ?></td>
+                                        <td class="right">$ <?php echo $producto['detalle']['importe_unitario']; ?></td>
                                         <td class="center"><?php echo $producto['detalle']['cantidad']; ?></td>
-                                        <td class="right"><?php echo $producto['detalle']['importe_total']; ?></td>
+                                        <td class="right">$ <?php echo $producto['detalle']['importe_total']; ?></td>
                                     </tr>
                                     <?php $contador++; ?>
                                 <?php endforeach; ?>
@@ -88,7 +88,7 @@
                                         <strong class="text-dark">Total</strong>
                                     </td>
                                     <td class="right">
-                                        <strong class="text-dark"><?php echo isset($cabeceraCompra['total']) ? $cabeceraCompra['total'] : 'Sin Datos'; ?></strong>
+                                        <strong class="text-dark">$ <?php echo isset($cabeceraCompra['total']) ? $cabeceraCompra['total'] : 'Sin Datos'; ?></strong>
                                     </td>
                                 </tr>
                             </tbody>

@@ -41,6 +41,65 @@
             </div>
         <?php endforeach; ?>
     </div>
+
+
+
+    <div>
+        <h2>Usuarios Visitantes</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Mensaje</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($unreadMessagesNoUser as $message) : ?>
+                    <tr id="mensaje-<?php echo $message['id']; ?>">
+                        <td><?php echo $message['nombre']; ?></td>
+                        <td><?php echo $message['email']; ?></td>
+                        <td><?php echo $message['telefono']; ?></td>
+                        <td><?php echo $message['mensaje']; ?></td>
+                        <td>
+                            <button class="btn btn-primary" onclick="markAsRead(<?php echo $message['id']; ?>)">Marcar como leído</button>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2>Usuarios Registrados</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Mensaje</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($unreadMessagesWithUser as $message) : ?>
+                    <tr id="mensaje-<?php echo $message['id']; ?>">
+                        <td><?php echo $message['nombre']; ?></td>
+                        <td><?php echo $message['email']; ?></td>
+                        <td><?php echo $message['telefono']; ?></td>
+                        <td><?php echo $message['mensaje']; ?></td>
+                        <td>
+                            <button class="btn btn-primary" onclick="markAsRead(<?php echo $message['id']; ?>)">Marcar como leído</button>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
 

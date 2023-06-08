@@ -72,7 +72,7 @@
                     ?>
                     <tr>
                         <td><?= $compra['id'] ?></td>
-                        <td><?= $compra['total'] ?></td>
+                        <td>$ <?= $compra['total'] ?></td>
                         <td><?= $usuario ? $usuario['nombre'] : 'S/N' ?> <?= $usuario ? $usuario['apellido'] : 'S/A' ?></td>
                         <td><?= $usuario ? $usuario['direccion'] : 'S/D' ?></td>
                         <td><?= $compra['metodo_pago'] ?></td>

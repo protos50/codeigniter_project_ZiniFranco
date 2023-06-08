@@ -87,6 +87,7 @@
         <h1 class="mt-4">Catálogo de Productos</h1>
         <?php if (session()->user_id == 1) : ?>
             <a class="btn btn-primary mt-4" href="/add">Añadir un Producto</a>
+            
         <?php endif; ?>
 
     </div>
