@@ -15,7 +15,7 @@ class AdminController extends Controller
         $data = ['title' => 'Smart Home Corrientes | Usuarios'];
         echo view('header',  $data);
         echo view('user_list', ['users' => $users]);
-        echo view('footer');
+        //echo view('footer');
     }
 
     public function toggleBaja($userId)

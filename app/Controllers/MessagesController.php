@@ -7,6 +7,8 @@ use CodeIgniter\Controller;
 
 class MessagesController extends Controller
 {
+
+    //controlador de los mensajes no leidos
     public function index()
     {
         // Obtener el modelo de mensajes
@@ -25,9 +27,10 @@ class MessagesController extends Controller
         echo view('messages', compact('unreadMessagesNoUser', 'unreadMessagesWithUser'));
 
         // Mostrar la vista del pie de página
-        echo view('footer');
+        //echo view('footer');
     }
 
+    //controlador de los mensajes leidos
     public function mensajesLeidos()
     {
         // Obtener el modelo de mensajes
@@ -46,7 +49,7 @@ class MessagesController extends Controller
         echo view('messages_readed', compact('readedMessagesNoUser', 'readedMessagesWithUser'));
 
         // Mostrar la vista del pie de página
-        echo view('footer');
+        //echo view('footer');
     }
 
 

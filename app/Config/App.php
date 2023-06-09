@@ -17,8 +17,8 @@ class App extends BaseConfig
      *
      *    http://example.com/
      */
-    //public string $baseURL = 'http://localhost/codeigniter_project_ZiniFranco/public/';
-    public string $baseURL = 'http://localhost/';
+    public string $baseURL = 'http://localhost/codeigniter_project_ZiniFranco/public/';
+    //public string $baseURL = 'https://5968-181-171-73-11.ngrok-free.app/';
 
 
 

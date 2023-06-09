@@ -86,14 +86,32 @@
     <div class="d-flex justify-content-between align-items-center">
         <h1 class="mt-4">Catálogo de Productos</h1>
         <?php if (session()->user_id == 1) : ?>
-            <a class="btn btn-primary mt-4" href="/add">Añadir un Producto</a>
-            
+            <a class="btn btn-primary mt-4" href="<?php echo base_url('add'); ?>">Añadir un Producto</a>
+
         <?php endif; ?>
 
     </div>
 
-    <?php if (!empty($cart)) : ?>
+    <?php if (session()->has('error')) : ?>
+        <div class="alert alert-danger">
+            <?php echo session('error'); ?>
+        </div>
+    <?php endif; ?>
+
+
+    <?php if (!session()->has('user_id')) : ?>
+        <div class="alert alert-warning">
+            <?php echo ('Para poder realizar compras primero deberá ingresar con su cuenta de usuario.'); ?>
+        </div>
+
         <div class="alert alert-info" role="alert">
+            Registrarse haciendo
+            <a href="<?php echo base_url('register'); ?>">¡Click Aqui!</a>
+        </div>
+    <?php endif; ?>
+
+    <?php if (!empty($cart)) : ?>
+        <div class="alert alert-primary" role="alert">
             Productos en el carrito:
             <ul>
                 <?php foreach ($cart as $productId => $item) : ?>
@@ -128,12 +146,23 @@
                                 <?php if ($product['stock'] > 0) : ?>
 
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <?php if (session()->has('user_id')) { ?>
+                                        <?php if (session()->has('user_id') && session()->user_id == 2) { ?>
                                             <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
                                         <?php } ?>
 
+
                                         <?php if (session()->user_id == 1) { ?>
                                             <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
+                                        <?php } ?>
+
+
+                                        <!-- Mostrar botón "Dar de Baja" o "Dar de Alta" si el usuario es Administrador-->
+                                        <?php if (session()->user_id == 1) { ?>
+                                            <?php if ($product['baja'] === 'no') : ?>
+                                                <a href="<?php echo base_url('/products/toggleProductStatus/' . $product['id']); ?>" class="btn btn-danger">Dar de Baja</a>
+                                            <?php else : ?>
+                                                <a href="<?php echo base_url('/products/toggleProductStatus/' . $product['id']); ?>" class="btn btn-success">Dar de Alta</a>
+                                            <?php endif; ?>
                                         <?php } ?>
 
                                     </div>
@@ -167,20 +196,34 @@
                             <?php if ($product['stock'] > 0) : ?>
 
                                 <div class="d-flex justify-content-between align-items-center">
-                                        <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
 
                                     <?php if (session()->user_id == 1) { ?>
                                         <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
+
+                                        <!-- Mostrar botón "Dar de Baja" o "Dar de Alta" -->
+
+                                        <?php if ($product['baja'] === 'no') : ?>
+                                            <a href="<?php echo base_url('/products/toggleProductStatus/' . $product['id']); ?>" class="btn btn-danger">Dar de Baja</a>
+                                        <?php else : ?>
+                                            <a href="<?php echo base_url('/products/toggleProductStatus/' . $product['id']); ?>" class="btn btn-success">Dar de Alta</a>
+                                        <?php endif; ?>
                                     <?php } ?>
 
                                 </div>
 
                             <?php else : ?>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <button class="btn btn-primary" disabled>No disponible</button>
+                                    <button class="btn btn-primary" disabled>Sin Stock</button>
 
                                     <?php if (session()->user_id == 1) { ?>
                                         <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
+
+                                        <!-- Mostrar botón "Dar de Baja" o "Dar de Alta"-->
+                                        <?php if ($product['baja'] === 'no') : ?>
+                                            <a href="<?php echo base_url('/products/toggleProductStatus/' . $product['id']); ?>" class="btn btn-danger">Dar de Baja</a>
+                                        <?php else : ?>
+                                            <a href="<?php echo base_url('/products/toggleProductStatus/' . $product['id']); ?>" class="btn btn-success">Dar de Alta</a>
+                                        <?php endif; ?>
                                     <?php } ?>
 
                                 </div>
@@ -241,6 +284,8 @@
         }
 
         modal.style.display = "block";
+
+
     }
 
 
@@ -249,13 +294,25 @@
     window.addEventListener("click", function(event) {
         if (event.target === modal || modal.contains(event.target)) {
             modal.style.display = "none";
+            location.reload();
         }
+
     });
 
-    // When the user clicks on the close button, close the modal
+    // // When the user clicks on the close button, close the modal
+    // closeBtn.onclick = function() {
+    //     modal.style.display = "none";
+    // };
+
+
+    // When the user clicks on the close button, close the modal and reload the page
     closeBtn.onclick = function() {
         modal.style.display = "none";
+        location.reload(); // Recargar la página
     };
+
+    // ...
+
 
     function addToCart(productId) {
         var cart = <?php echo isset($cart) ? json_encode($cart) : '{}'; ?>;
@@ -292,7 +349,9 @@
                         } else {
                             // Mostrar modal de éxito
                             showModal("El producto ha sido agregado al carrito.");
+
                         }
+
                     })
                     .catch(function() {
                         // Mostrar modal de error en caso de fallo en la solicitud AJAX

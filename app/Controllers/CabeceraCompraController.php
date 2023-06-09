@@ -23,6 +23,6 @@ class CabeceraCompraController extends BaseController
 
         echo view('header',  $data);
         echo view('cabecera_compra', $data);
-        echo view('footer');
+        //echo view('footer');
     }
 }

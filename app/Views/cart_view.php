@@ -41,7 +41,7 @@
         </div>
 
         <div class="text-center">
-            <a href="/checkout" class="btn btn-primary">Concretar compra</a>
+            <a href="<?php echo base_url('checkout'); ?>" class="btn btn-primary">Concretar compra</a>
         </div>
 
     <?php else : ?>

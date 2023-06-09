@@ -57,6 +57,8 @@ $routes->get('products', 'Products::index');
 
 $routes->get('add', 'ProductADDController::add', ['filter' => 'sessionFilter']);
 $routes->post('product/add', 'ProductADDController::add', ['filter' => 'sessionFilter']);
+$routes->get('/products/toggleProductStatus/(:num)', 'Products::toggleProductStatus/$1');
+
 
 $routes->get('/add/(:num)', 'ProductADDController::add/$1', ['filter' => 'sessionFilter']);
 

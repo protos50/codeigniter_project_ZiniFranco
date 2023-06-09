@@ -75,7 +75,7 @@
                     <h3>Total de la compra: $<?php echo $total; ?></h3>
 
                     <div class="text-center">
-                        <a class="btn btn-secondary" href="/cart">Volver al Carrito</a>
+                        <a class="btn btn-secondary" href="<?php echo base_url('cart'); ?>">Volver al Carrito</a>
                         <button class="btn btn-primary" id="confirmButton">Finalizar Compra</button>
                     </div>
 
@@ -216,7 +216,7 @@
         }
 
         // Enviar la solicitud con el formulario combinado
-        fetch('/checkout/confirmPurchase', {
+        fetch('<?php echo base_url('checkout/confirmPurchase'); ?>', {
                 method: 'POST',
                 body: combinedFormData
             })
@@ -227,8 +227,8 @@
             })
             .catch(error => {
                 // Manejar los errores
+                console.log(error);
+                alert("Error al intentar hacer la compra. Comuniquese con un Administrador");
             });
-
-
     });
 </script>

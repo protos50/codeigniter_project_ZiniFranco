@@ -15,7 +15,7 @@
     <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
         <div class="card">
             <div class="card-header p-4">
-                <a class="pt-2 d-inline-block" href="/" data-abc="true">HOME | SmartHomeCorrientes.com</a>
+                <a class="pt-2 d-inline-block" href="<?php echo base_url('/'); ?>" data-abc="true">HOME | SmartHomeCorrientes.com</a>
                 <div class="float-right">
                     <h3 class="mb-0">Factura ID Compra: # <?php echo isset($cabeceraCompra['id']) ? $cabeceraCompra['id'] : 'Sin Datos'; ?></h3>
                     <?php echo isset($cabeceraCompra['fecha_alta']) ? "Fecha de emisión: " . $cabeceraCompra['fecha_alta'] : 'Sin Datos'; ?>

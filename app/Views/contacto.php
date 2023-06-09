@@ -4,7 +4,13 @@
     <section>
         <div class="hero img-fluid d-flex flex-column justify-content-center align-content-center" style="background-image: url(assets/img/hero-contact-us.jpg); height: 26vw; background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
             <div class="sub-hero">
-                <h1 class="text-white text-center mb-4 font-lato" style="font-weight: 700; font-size: 3em;">Contáctanos</h2>
+
+                <?php if (!session()->has('user_id')) : ?>
+                    <h1 class="text-white text-center mb-4 font-lato" style="font-weight: 700; font-size: 3em;">Contáctanos</h1>
+                <?php else : ?>
+                    <h1 class="text-white text-center mb-4 font-lato" style="font-weight: 700; font-size: 3em;">Consultanos</h1>
+                <?php endif; ?>
+
             </div>
 
         </div>
@@ -14,7 +20,13 @@
                 <!-- formulario de contacto -->
                 <div class="col-lg-8 col-12 border rounded border-dark bg-color-2">
                     <div class="p-md-0 m-5">
-                        <h2 class="font-lato">Contactanos</h2>
+
+                        <?php if (!session()->has('user_id')) : ?>
+                            <h2 class="font-lato">Contactanos</h2>
+                        <?php else : ?>
+                            <h2 class="font-lato">Realiza una Consulta</h2>
+                        <?php endif; ?>
+
                         <h3 class="font-lato" style="color: #ff6700; font-size: max(1.5vw, 20PX);">¡Ingresá tus datos y responderemos a la brevedad!</h3>
                         <form action="<?= site_url('/guardar_datos') ?>" method="post">
                             <div class="form-group">
