@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\CabeceraCompraModel;
 use App\Models\CabeceraDetalleModel;
 use App\Models\ProductModel;
@@ -108,7 +109,19 @@ class CheckoutController extends Controller
         // Elimina el carrito de la sesión
         session()->remove('cart');
 
-        return $this->response->setJSON(['redirectUrl' => base_url('/confirmation')]);
+
+        $compraId = $cabeceraCompraModel->insertID(); // Obtener el ID de la compra guardada
+
+        // Redirigir a la vista de confirmación de compra con el ID de la compra
+        //return redirect()->to('/confirmation/' . $compraId);
+        //return $this->response->setJSON(['redirectUrl' => base_url('/confirmation/' . $compraId)]);
+        // Crear el array con la URL de redirección
+
+        // Obtener el ID de la compra guardada
+        $compraId = $cabeceraCompraModel->getInsertID();
+
+        // Redireccionar a la página de confirmación con el ID de la compra
+        return $this->response->setJSON(['redirectUrl' => base_url('/confirmation/' . $compraId)]);
     }
 
     // Calcula el total de la compra a partir de los datos del carrito

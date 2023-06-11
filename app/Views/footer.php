@@ -7,7 +7,7 @@
       <div class="row w-100">
         <div class="col-sm-6 col-md-12 col-lg-3 col-xl-3 mx-auto mt-1">
           <h5>Sobre Nosotros</h5>
-          <p class="text-justify">Smar Home Corrientes es pionero en la región por brindar soluciones inteligentes para el hogar y ha sabido ganado el reconocimiento por su innovación y calidad. Nos enorgullece haber
+          <p style=" text-align: justify;">Smar Home Corrientes es pionero en la región por brindar soluciones inteligentes para el hogar y ha sabido ganado el reconocimiento por su innovación y calidad. Nos enorgullece haber
             logrado la satisfacción de nuestros clientes y seguir mejorando cada día para brindarles una experiencia única.</p>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 mx-auto mt-1">

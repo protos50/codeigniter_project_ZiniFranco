@@ -35,34 +35,13 @@ class ProductADDController extends Controller
                 // Update the existing product in the database
                 $productModel->update($productId, $data);
             }
-            // Redirect to the product catalog or any other desired page
-            return redirect()->to(base_url('/products'));
+
+            // Ir a la vista de confirmaciond de producto agregado exitosamente
+            echo view('header', ['title' => 'Editado Exitoso']);
+            echo view('productoAgregado_confirmacion');
+            echo view('footer');
         }
 
-        // If the form is not submitted, load the add product view
-        // Vista login
-        if (empty($productId)) {
-            // Vista login
-            $data = ['title' => 'Smart Home Corrientes | Agregar Producto'];
-        } else {
-            // Get the product data based on the provided ID
-            $productModel = new ProductModel();
-            $product = $productModel->find($productId);
-
-            if (empty($product)) {
-                // Handle case when the product is not found
-                // Redirect or show an error message
-            }
-
-            $data = [
-                'title' => 'Smart Home Corrientes | Editar Producto',
-                'product' => $product
-            ];
-        }
-
-        echo view('header',  $data);
-        echo view('add_product_view');
-        echo view('footer');
     }
 
 

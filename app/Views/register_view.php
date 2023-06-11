@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Register</h3>
+                    <h3 class="card-title">Registro de Usuario</h3>
                 </div>
                 <div class="card-body">
                     <form method="post" action="<?php echo site_url('register/process_registration'); ?>">
@@ -42,9 +42,13 @@
                             <input type="password" name="pass" id="pass" class="form-control" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="submit" class="btn btn-primary">Registrase</button>
                     </form>
                 </div>
+            </div>
+
+            <div class="alert alert-warning mt-3">
+                Si ya tiene una cuenta registrada puede <b><a href="<?php echo base_url('login'); ?>">Ingresar aquí</a></b>.'
             </div>
         </div>
     </div>

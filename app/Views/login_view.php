@@ -1,10 +1,9 @@
-
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Login</h3>
+                    <h3 class="card-title">Ingrese con su cuenta</h3>
                 </div>
                 <div class="card-body">
                     <?php if (isset($error)) { ?>
@@ -21,9 +20,14 @@
                             <input type="password" name="password" id="password" class="form-control" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
                     </form>
                 </div>
+            </div>
+
+            <div class="alert alert-info mt-3" role="alert">
+                Registrarse haciendo
+                <b><a href="<?php echo base_url('register'); ?>">¡Click Aqui!</a></b>
             </div>
         </div>
     </div>

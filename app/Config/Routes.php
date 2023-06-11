@@ -99,9 +99,13 @@ $routes->get('/cart/clear_cart', 'CartController::clearCart');
 $routes->get('/checkout', 'CheckoutController::index');
 
 $routes->post('/checkout/confirmPurchase', 'CheckoutController::confirmPurchase');
-$routes->get('/confirmation', 'ConfirmationController::index');
+//$routes->get('/confirmation', 'ConfirmationController::index');
+$routes->get('/confirmation/(:num)', 'ConfirmationController::index/$1');
+
 
 $routes->get('/factura/(:num)', 'FacturaController::showFactura/$1');
+$routes->post('factura/downloadPDF/(:num)', 'FacturaController::downloadPDF/$1');
+
 
 // Ruta para mostrar todos los registros de la tabla "cabecera_compra"
 $routes->get('/cabecera_compra', 'CabeceraCompraController::index', ['filter' => 'sessionFilter']);

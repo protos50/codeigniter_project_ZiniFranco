@@ -101,12 +101,12 @@
 
     <?php if (!session()->has('user_id')) : ?>
         <div class="alert alert-warning">
-            <?php echo ('Para poder realizar compras primero deberá ingresar con su cuenta de usuario.'); ?>
+            Para poder realizar compras primero deberá  <b><a href="<?php echo base_url('login'); ?>">Ingresar aquí</a></b> con su cuenta de usuario.'
         </div>
 
         <div class="alert alert-info" role="alert">
             Registrarse haciendo
-            <a href="<?php echo base_url('register'); ?>">¡Click Aqui!</a>
+            <b><a href="<?php echo base_url('register'); ?>">¡Click Aqui!</a></b>
         </div>
     <?php endif; ?>
 
@@ -130,27 +130,26 @@
         <?php if (!empty($products)) : ?>
             <?php foreach ($products as $product) : ?>
 
-                <!-- A los usuarios solo se muestran las cards de productos que hay en stock -->
-                <?php if ($product['stock'] > 0) : ?>
-                    <?php $hayAlgunProducto = true; ?>
-                    <div class="col">
-                        <div class="card product-card">
-                            <?php if (!empty($product['imagen'])) : ?>
-                                <img src="<?php echo base_url('/assets/product_images/' . $product['imagen']); ?>" alt="Product Image">
-                            <?php endif; ?>
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $product['nombre']; ?></h5>
-                                <p class="card-text"><?php echo $product['descripcion']; ?></p>
-                                <p class="card-text price">Precio: $<?php echo $product['precio']; ?></p>
-                                <p class="card-text stock">Stock: <?php echo $product['stock']; ?></p>
-                                <?php if ($product['stock'] > 0) : ?>
+                <!-- A todos los tipos de usuario se muestran las cards de productos que no estan dados de bajas -->
+                <?php if ($product['baja'] === 'no') { ?>
+
+                    <!-- solo se muestran las cards de productos que hay en stock -->
+                    <?php if ($product['stock'] > 0) : ?>
+                        <?php $hayAlgunProducto = true; ?>
+                        <div class="col">
+                            <div class="card product-card">
+                                <?php if (!empty($product['imagen'])) : ?>
+                                    <img src="<?php echo base_url('/assets/product_images/' . $product['imagen']); ?>" alt="Product Image">
+                                <?php endif; ?>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $product['nombre']; ?></h5>
+                                    <p class="card-text"><?php echo $product['descripcion']; ?></p>
+                                    <p class="card-text price">Precio: $<?php echo $product['precio']; ?></p>
+                                    <p class="card-text stock">Stock: <?php echo $product['stock']; ?></p>
 
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <?php if (session()->has('user_id') && session()->user_id == 2) { ?>
-                                            <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
-                                        <?php } ?>
 
-
+                                        <!-- Mostrar botón "Editar" si el usuario es Administrador-->
                                         <?php if (session()->user_id == 1) { ?>
                                             <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
                                         <?php } ?>
@@ -165,6 +164,13 @@
                                             <?php endif; ?>
                                         <?php } ?>
 
+                                        <?php if ($product['stock'] > 0) : ?>
+
+                                            <?php if (session()->has('user_id') && session()->user_id == 2) { ?>
+                                                <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
+                                            <?php } ?>
+
+
                                     </div>
 
                                 <?php else : ?>
@@ -177,12 +183,74 @@
 
                                     </div>
                                 <?php endif; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endif; ?>
+                    <?php endif; ?>
 
-                <!-- Adicional a las otras cards con este condicional tambien se muestrarán las cards con stock 0 a los administradores  -->
+                <?php } ?>
+
+                <!-- Solo el ADMINISTRADOR puede ver las cards de productos que estan dados de bajas -->
+                <?php if (session()->user_id == 1  && $product['baja'] === 'si') { ?>
+
+                    <!-- solo se muestran las cards de productos que hay en stock -->
+                    <?php if ($product['stock'] > 0) : ?>
+                        <?php $hayAlgunProducto = true; ?>
+                        <div class="col">
+                            <div class="card product-card">
+                                <?php if (!empty($product['imagen'])) : ?>
+                                    <img src="<?php echo base_url('/assets/product_images/' . $product['imagen']); ?>" alt="Product Image">
+                                <?php endif; ?>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $product['nombre']; ?></h5>
+                                    <p class="card-text"><?php echo $product['descripcion']; ?></p>
+                                    <p class="card-text price">Precio: $<?php echo $product['precio']; ?></p>
+                                    <p class="card-text stock">Stock: <?php echo $product['stock']; ?></p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <!-- Mostrar botón "Editar" si el usuario es Administrador-->
+                                        <?php if (session()->user_id == 1) { ?>
+                                            <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
+                                        <?php } ?>
+
+
+                                        <!-- Mostrar botón "Dar de Baja" o "Dar de Alta" si el usuario es Administrador-->
+                                        <?php if (session()->user_id == 1) { ?>
+                                            <?php if ($product['baja'] === 'no') : ?>
+                                                <a href="<?php echo base_url('/products/toggleProductStatus/' . $product['id']); ?>" class="btn btn-danger">Dar de Baja</a>
+                                            <?php else : ?>
+                                                <a href="<?php echo base_url('/products/toggleProductStatus/' . $product['id']); ?>" class="btn btn-success">Dar de Alta</a>
+                                            <?php endif; ?>
+                                        <?php } ?>
+
+                                        <?php if ($product['stock'] > 0) : ?>
+
+                                            <?php if (session()->has('user_id') && session()->user_id == 2) { ?>
+                                                <a href="#" class="btn btn-primary add-to-cart" onclick="addToCart(<?php echo $product['id']; ?>)">Agregar al carrito</a>
+                                            <?php } ?>
+
+
+                                    </div>
+
+                                <?php else : ?>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-primary" disabled>No disponible</button>
+
+                                        <?php if (session()->user_id == 1) { ?>
+                                            <a class="btn btn-primary" href="<?php echo base_url('edit/' . $product['id']); ?>">Editar</a>
+                                        <?php } ?>
+
+                                    </div>
+                                <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
+                <?php } ?>
+
+                <!-- Adicional a las otras cards con este condicional tambien se muestrarán las cards con stock 0 (a los ADMINISTRADORES)  -->
                 <?php if ($product['stock'] == 0 && session()->user_id == 1) : ?>
                     <div class="card product-card">
                         <?php if (!empty($product['imagen'])) : ?>
@@ -299,19 +367,11 @@
 
     });
 
-    // // When the user clicks on the close button, close the modal
-    // closeBtn.onclick = function() {
-    //     modal.style.display = "none";
-    // };
-
-
     // When the user clicks on the close button, close the modal and reload the page
     closeBtn.onclick = function() {
         modal.style.display = "none";
         location.reload(); // Recargar la página
     };
-
-    // ...
 
 
     function addToCart(productId) {
