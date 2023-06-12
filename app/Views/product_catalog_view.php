@@ -137,11 +137,11 @@
                     <?php if ($product['stock'] > 0) : ?>
                         <?php $hayAlgunProducto = true; ?>
                         <div class="col">
-                            <div class="card product-card">
+                            <div class="card product-card" style=" box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);">
                                 <?php if (!empty($product['imagen'])) : ?>
                                     <img src="<?php echo base_url('/assets/product_images/' . $product['imagen']); ?>" alt="Product Image">
                                 <?php endif; ?>
-                                <div class="card-body">
+                                <div class="card-body" >
                                     <h5 class="card-title"><?php echo $product['nombre']; ?></h5>
                                     <p class="card-text"><?php echo $product['descripcion']; ?></p>
                                     <p class="card-text price">Precio: $<?php echo $product['precio']; ?></p>
@@ -197,7 +197,7 @@
                     <?php if ($product['stock'] > 0) : ?>
                         <?php $hayAlgunProducto = true; ?>
                         <div class="col">
-                            <div class="card product-card">
+                            <div class="card product-card" style=" box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);">
                                 <?php if (!empty($product['imagen'])) : ?>
                                     <img src="<?php echo base_url('/assets/product_images/' . $product['imagen']); ?>" alt="Product Image">
                                 <?php endif; ?>
@@ -256,7 +256,7 @@
                         <?php if (!empty($product['imagen'])) : ?>
                             <img src="<?php echo base_url('/assets/product_images/' . $product['imagen']); ?>" alt="Product Image">
                         <?php endif; ?>
-                        <div class="card-body">
+                        <div class="card-body" style=" box-shadow: -1px 4px 43px -2px rgb(102, 74, 55);">
                             <h5 class="card-title"><?php echo $product['nombre']; ?></h5>
                             <p class="card-text"><?php echo $product['descripcion']; ?></p>
                             <p class="card-text price">Precio: $<?php echo $product['precio']; ?></p>
