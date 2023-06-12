@@ -103,7 +103,6 @@
                 </a>
                 <ul class="dropdown-menu text-center" aria-labelledby="loginDropdown">
                   <?php if ($session->has('user_id')) : ?>
-                    <li><a class="dropdown-item" href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
                     <li><a class="dropdown-item" href="<?php echo base_url('logout'); ?>">Deslogearse</a></li>
                   <?php else : ?>
                     <li><a class="dropdown-item" href="<?php echo base_url('login'); ?>">Ingresar</a></li>

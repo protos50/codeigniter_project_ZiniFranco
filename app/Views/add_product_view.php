@@ -7,37 +7,41 @@
                     <h3 class="card-title">Agregar Producto</h3>
                 </div>
                 <div class="card-body">
-                    <?php echo form_open_multipart('/product/add', ['id' => 'productForm']); ?>
+                    <?php //echo form_open_multipart('/product/add', ['id' => 'productForm']); 
+                    ?>
+                    <form id="productForm" action="<?php echo base_url('/product/add'); ?>" method="post" enctype="multipart/form-data">
 
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre:</label>
-                        <input id="nombre" type="text" name="nombre" class="form-control" value="<?php echo isset($product['nombre']) ? $product['nombre'] : ''; ?>">
-                    </div>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input id="nombre" type="text" name="nombre" class="form-control">
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="descripcion" class="form-label">Descripción:</label>
-                        <textarea id="descripcion" name="descripcion" class="form-control"><?php echo isset($product['descripcion']) ? $product['descripcion'] : ''; ?></textarea>
-                    </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción:</label>
+                            <textarea id="descripcion" name="descripcion" class="form-control"></textarea>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="precio" class="form-label">Precio:</label>
-                        <input id="precio" type="text" name="precio" class="form-control" value="<?php echo isset($product['precio']) ? $product['precio'] : ''; ?>">
-                        <small class="text-muted">Formato: xxxxxxxxxx.xx</small>
-                    </div>
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio:</label>
+                            <input id="precio" type="text" name="precio" class="form-control">
+                            <small class="text-muted">Formato: xxxxxxxxxx.xx</small>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="stock" class="form-label">Stock:</label>
-                        <input id="stock" type="number" name="stock" class="form-control" value="<?php echo isset($product['stock']) ? $product['stock'] : ''; ?>">
-                    </div>
+                        <div class="mb-3">
+                            <label for="stock" class="form-label">Stock:</label>
+                            <input id="stock" type="number" name="stock" class="form-control">
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="imagen" class="form-label">Imagen:</label>
-                        <input id="imagen" type="file" name="imagen" class="form-control">
-                    </div>
+                        <div class="mb-3">
+                            <label for="imagen" class="form-label">Imagen:</label>
+                            <input id="imagen" type="file" name="imagen" class="form-control">
+                        </div>
 
-                    <button type="submit" class="btn btn-primary">Agregar Producto</button>
+                        <button type="submit" class="btn btn-primary">Agregar Producto</button>
 
-                    <?php echo form_close(); ?>
+                    </form>
+                    <?php //echo form_close(); 
+                    ?>
                 </div>
             </div>
         </div>

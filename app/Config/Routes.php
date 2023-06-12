@@ -30,6 +30,7 @@ $session = session();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/bienvenido', 'Home::bienvenido');
 $routes->get('/nosotros', 'Home::nosotros');
 $routes->get('/comercializacion', 'Home::comercializacion');
 $routes->get('/terminos', 'Home::terminos');
@@ -55,15 +56,15 @@ $routes->get('products', 'Products::index');
 // $routes->post('product/add', 'ProductADDController::add');
 // $routes->get('add', 'ProductADDController::add');
 
-$routes->get('add', 'ProductADDController::add', ['filter' => 'sessionFilter']);
-$routes->post('product/add', 'ProductADDController::add', ['filter' => 'sessionFilter']);
+$routes->get('add', 'ProductADDController::index', ['filter' => 'sessionFilter']);
+$routes->post('/product/add', 'ProductADDController::add', ['filter' => 'sessionFilter']);
 $routes->get('/products/toggleProductStatus/(:num)', 'Products::toggleProductStatus/$1');
 
 
 $routes->get('/add/(:num)', 'ProductADDController::add/$1', ['filter' => 'sessionFilter']);
 
 
-$routes->get('edit/(:num)', 'ProductEditController::edit/$1', ['filter' => 'sessionFilter']);
+$routes->get('edit/(:num)', 'ProductEditController::edit/$1', ['filter' => 'sessionFilter']);   
 $routes->post('update/(:num)', 'ProductEditController::update/$1', ['filter' => 'sessionFilter']);
 
 

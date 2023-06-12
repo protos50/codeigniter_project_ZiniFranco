@@ -7,44 +7,47 @@ use CodeIgniter\Controller;
 
 class ProductADDController extends Controller
 {
+    public function index()
+    {
+        $data = ['title' => 'Smart Home Corrientes | Pagina en Construcion'];
+        // Ir a la vista de confirmaciond de producto agregado exitosamente
+        echo view('header',  $data);
+        echo view('add_product_view');
+        echo view('footer');
+    }
+
     public function add($productId = null)
     {
         // Load the form helper
-        helper('form');
+        //helper('form');
 
         // Create an instance of the ProductModel
         $productModel = new ProductModel();
 
-        // If the form is submitted
-        if ($this->request->getPost()) {
-            // Get the form input values
-            $data = [
-                'nombre' => $this->request->getPost('nombre'),
-                'descripcion' => $this->request->getPost('descripcion'),
-                'precio' => $this->request->getPost('precio'),
-                'stock' => $this->request->getPost('stock'),
-                // Handle image upload and set the 'imagen' field accordingly
-                'imagen' => $this->handleImageUpload()
-            ];
+        // Get the form input values
+        $data = [
+            'nombre' => $this->request->getPost('nombre'),
+            'descripcion' => $this->request->getPost('descripcion'),
+            'precio' => $this->request->getPost('precio'),
+            'stock' => $this->request->getPost('stock'),
+            // Handle image upload and set the 'imagen' field accordingly
+            'imagen' => $this->handleImageUpload()
+        ];
 
 
-            if (empty($productId)) {
-                // Insert the new product into the database
-                $productModel->insert($data);
-            } else {
-                // Update the existing product in the database
-                $productModel->update($productId, $data);
-            }
-
-            // Ir a la vista de confirmaciond de producto agregado exitosamente
-            echo view('header', ['title' => 'Editado Exitoso']);
-            echo view('productoAgregado_confirmacion');
-            echo view('footer');
+        if (empty($productId)) {
+            // Insert the new product into the database
+            $productModel->insert($data);
+        } else {
+            // Update the existing product in the database
+            $productModel->update($productId, $data);
         }
 
+        // Ir a la vista de confirmaciond de producto agregado exitosamente
+        echo view('header', ['title' => 'Editado Exitoso']);
+        echo view('productoAgregado_confirmacion');
+        echo view('footer');
     }
-
-
 
     // Method to handle image upload and return the filename
     private function handleImageUpload()

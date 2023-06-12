@@ -51,8 +51,14 @@ class Login extends Controller
                 'email' => $user->email,
             ]);
 
+            if ($user->perfil_id == 1) {
+                return redirect()->to(base_url('/cabecera_compra'));
+            } else {
+                return redirect()->to(base_url('/bienvenido'));
+            }
+            
             // redirije al dashboard
-            return redirect()->to(base_url('/dashboard'));
+            
         } else {
             // en caso de login invalido, muestra mensaje de error(arreglar esto)
             return redirect()->to(base_url('/login'));
