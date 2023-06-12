@@ -47,7 +47,7 @@ class Register extends Controller
                 'telefono' => $telefono,
                 'email' => $this->request->getPost('email'),
                 'usuario' => $this->request->getPost('usuario'),
-                'pass' => $this->request->getPost('pass'),
+                'pass' => password_hash($this->request->getPost('pass'), PASSWORD_DEFAULT),
                 'perfil_id' => 2, // Default profile ID
                 'baja' => 'no' // valor por defecto para el compo "baja" 
             ];
