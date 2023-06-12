@@ -1,5 +1,12 @@
 <div class="container py-4">
-    <h1>Carrito de Compras</h1>
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="mt-4">Carrito de Compras</h1>
+        <?php if (!empty($cart)) : ?>
+            <a class="btn btn-dark mt-4" href="<?php echo base_url('products'); ?>">Seguir Comprando</a>
+
+        <?php endif; ?>
+
+    </div>
 
     <?php if (session()->has('alert')) : ?>
         <div class="alert alert-danger" role="alert">
@@ -45,6 +52,22 @@
         </div>
 
     <?php else : ?>
-        <p>No hay productos en el carrito.</p>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h3>No hay productos agregados al carrito</h3>
+                    <h5>Diríjase al catálogo para agregar productos al carrito de compras</5>
+
+
+                        <!-- Agregar el botón de descarga y el formulario -->
+                        <div class="text-center py-3">
+                            <h3>Para ir al catalogo:</h3>
+                            <a href="<?php echo base_url('/products'); ?>" class="btn btn-success">Haz Click Aquí</a>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
     <?php endif; ?>
 </div>

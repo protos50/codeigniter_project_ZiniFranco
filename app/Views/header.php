@@ -90,9 +90,18 @@
                 <li class="nav-item  p-2 p-md-1">
                   <a class="nav-link" href="<?php echo base_url('terminos'); ?>">Términos y Usos</a>
                 </li>
-
+                <!-- 
                 <li class="nav-item  p-2 p-md-1">
                   <a class="nav-link" href="<?php echo base_url('cart'); ?>">Carrito</a>
+                </li> -->
+
+                <li class="nav-item">
+                  <a class="nav-link" href="<?= base_url("cart"); ?>">
+                    <svg class="bi" width="28" height="28" fill="currentColor">
+                      <use xlink:href="assets/icons/bootstrap-icons.svg#cart3" />
+                    </svg>
+                    <span id="cantidad-carrito"></span>
+                  </a>
                 </li>
               <?php endif; ?>
 

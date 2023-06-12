@@ -76,7 +76,8 @@
 
                     <div class="text-center">
                         <a class="btn btn-secondary" href="<?php echo base_url('cart'); ?>">Volver al Carrito</a>
-                        <button class="btn btn-primary" id="confirmButton">Finalizar Compra</button>
+                        <a class="btn btn-info" href="<?php echo base_url('products'); ?>">Seguir comprando</a>
+                        <button class="btn btn-success" id="confirmButton">Finalizar Compra</button>
                     </div>
 
                 </div>
