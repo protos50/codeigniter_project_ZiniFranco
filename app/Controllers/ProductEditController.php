@@ -27,24 +27,72 @@ class ProductEditController extends Controller
 
     public function update($id)
     {
-        // Validar los datos del formulario
-        // Realizar las validaciones necesarias antes de actualizar el producto
-
         // Obtener los datos del formulario
         $data = [
             'nombre' => $this->request->getPost('nombre'),
             'descripcion' => $this->request->getPost('descripcion'),
             'precio' => $this->request->getPost('precio'),
-            'stock' => $this->request->getPost('stock'),
-            // Manejar la carga de imágenes y establecer el campo 'imagen' en consecuencia
-            //'imagen' => $this->handleImageUpload()
+            'stock' => $this->request->getPost('stock')
         ];
 
-        // Actualizar el producto en la base de datos
+        // Obtener la imagen actual del producto
         $productModel = new ProductModel();
+        $product = $productModel->find($id);
+        $imagenActual = $product['imagen'];
+
+        // Manejar la carga de imágenes solo si se seleccionó una nueva imagen
+        $imagenFile = $this->request->getFile('imagen');
+        if ($imagenFile && $imagenFile->isValid()) {
+            // Eliminar la imagen actual si existe
+            if (!empty($imagenActual)) {
+                $this->deleteImage($imagenActual);
+            }
+
+            // Procesar la carga de la nueva imagen
+            $data['imagen'] = $this->handleImageUpload();
+        } else {
+            // Si no se seleccionó una nueva imagen, conservar la imagen actual
+            $data['imagen'] = $imagenActual;
+        }
+
+        // Actualizar el producto en la base de datos
         $productModel->update($id, $data);
 
-        // Redireccionar al catálogo de productos o a cualquier otra página deseada
-        return redirect()->to(base_url('/products'));
+        // Ir a vista de confirmación
+        echo view('header', ['title' => 'Editado Exitoso']);
+        echo view('productoEditado_confirmacion');
+        echo view('footer');
     }
+
+    // Método para eliminar una imagen
+    private function deleteImage($imageName)
+    {
+        $imagePath = ROOTPATH . 'public/assets/product_images/' . $imageName;
+        if (file_exists($imagePath)) {
+            unlink($imagePath);
+        }
+    }
+
+
+    // Method to handle image upload and return the filename
+    private function handleImageUpload()
+    {
+        $imagenFile = $this->request->getFile('imagen');
+
+        // Check if a file was uploaded
+        if ($imagenFile && $imagenFile->isValid()) {
+            $image = $imagenFile;
+
+            // Generate a unique filename for the uploaded image
+            $newName = $image->getRandomName();
+
+            // Move the uploaded file to the designated directory
+            $image->move(ROOTPATH . 'public/assets/product_images', $newName);
+
+            return $newName; // Return the filename to be saved in the 'imagen' field
+        }
+
+        return null; // If no image uploaded, return null or handle accordingly
+    }
+
 }

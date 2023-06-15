@@ -44,7 +44,7 @@
                 <!-- Creamos un div para el cuadro negro con letras blancas -->
                 <div class="col-12 col-md-12 col-lg-6 columna-intro text-white " style="background-image: url('assets/img/fondo-negro-abstracto.avif');">
                   <div class="d-flex justify-content-center align-items-center">
-                    <div class="m-5">
+                    <div class="m-5" style=" text-align: justify;">
                       <h2 class="text-uppercase">Smart Home Corrientes</h1>
                         <p class="lead">Bienvenidos a la única y pionera tienda de la región y del país en ofrecer productos inteligentes para el hogar.</p>
                         <p><i> "Convierte tu hogar en un espacio inteligente con nuestros productos"</i></p>
@@ -169,12 +169,12 @@
       <hr class="hr hr-blurry my-5" style="color: #ff6700" />
 
       <!--cards iluminacion -->
-      <div class="my-5 card justify-content-center">
-        <div class="row g-0 align-items-center iluminacion-inteligente ">
-          <div class="col-lg-6 ">
-            <div class="card-body d-flex flex-column justify-content-center align-content-center h-100 p-card ">
+      <div class="my-5 card justify-content-center" style=" text-align: justify;">
+        <div class="row g-0 align-items-center iluminacion-inteligente " style=" text-align: justify;">
+          <div class="col-lg-6" style=" text-align: justify;">
+            <div class="card-body d-flex flex-column justify-content-center align-content-center p-card " style=" text-align: justify;">
               <h5 class="card-title font-notoSans mb-4 text-center">Descubre la revolución en iluminación con nuestra nueva tecnología de Iluminación Inteligente</h5>
-              <p class="card-text font-notoSans text-center">Con su capacidad de ajustar automáticamente el brillo y la tonalidad de la luz según tus preferencias y necesidades, nunca antes habías experimentado tanta comodidad y personalización en la iluminación de tu hogar. Además, con su conectividad inalámbrica y control remoto, nunca ha sido tan fácil controlar la iluminación de tu hogar desde cualquier lugar. Descubre la revolución en iluminación que te espera con nuestra Tecnología de Iluminación Inteligente.</p>
+              <p class="card-text font-notoSans" style=" text-align: justify;">Con su capacidad de ajustar automáticamente el brillo y la tonalidad de la luz según tus preferencias y necesidades, nunca antes habías experimentado tanta comodidad y personalización en la iluminación de tu hogar. Además, con su conectividad inalámbrica y control remoto, nunca ha sido tan fácil controlar la iluminación de tu hogar desde cualquier lugar. Descubre la revolución en iluminación que te espera con nuestra Tecnología de Iluminación Inteligente.</p>
             </div>
           </div>
           <div class="col-lg-6">
@@ -193,9 +193,9 @@
             <img src="assets/img/img6.webp" alt="Smart Home Product" class="img-fluid h-100">
           </div>
           <div class="col-md-6 h-100">
-            <div class="card-body d-flex flex-column justify-content-center align-content-center h-100 p-card">
+            <div class="card-body d-flex flex-column justify-content-center align-content-center h-100 p-card" >
               <h5 class="card-title font-notoSans mb-4 text-center">Conoce a nuestro nuevo Robot Aspirador</h5>
-              <p class="card-text font-notoSans text-center">Te presentamos la solución perfecta para la limpieza de tu hogar, nuestro nuevo Robot Aspirador. Con sus sensores avanzados y tecnología de mapeo, este aspirador puede navegar por tu hogar con facilidad y limpiar tus pisos de manera eficiente.</p>
+              <p class="card-text font-notoSans" style=" text-align: justify;">Te presentamos la solución perfecta para la limpieza de tu hogar, nuestro nuevo Robot Aspirador. Con sus sensores avanzados y tecnología de mapeo, este aspirador puede navegar por tu hogar con facilidad y limpiar tus pisos de manera eficiente.</p>
             </div>
           </div>
         </div>

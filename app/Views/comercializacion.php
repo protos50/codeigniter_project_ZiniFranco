@@ -5,7 +5,7 @@
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col">
+            <div class="col" style=" text-align: justify;">
                 <h3 class="text-danger fw-bold">Envíos a domicilio</h3>
                 <h4 class="fw-bold">¿Realizan envíos a domicilio?</h4>
                 <p>Sí, realizamos envíos a todo el territorio de la República Argentina. Una vez confirmada tu compra, recibirás la información del envío por correo electrónico, para que puedas realizar el correspondiente seguimiento. Las entregas se realizan exclusivamente en planta baja.</p>
@@ -189,7 +189,7 @@
                         </button>
                     </h2>
                     <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">El Programa Ahora 12 es un plan que te da la posibilidad de comprar productos nacionales en cuotas fijas con tu tarjeta de crédito.
+                        <div class="accordion-body" style=" text-align: justify;">El Programa Ahora 12 es un plan que te da la posibilidad de comprar productos nacionales en cuotas fijas con tu tarjeta de crédito.
                             Este Programa tiene vigencia hasta el 30 de junio del 2022.
                             Podés comprar productos y servicios en 3, 6, 12, 18 o 24 cuotas fijas.
                             Resolución 282/2021 Secretaria de Comercio Interior

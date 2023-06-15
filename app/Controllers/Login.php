@@ -31,30 +31,54 @@ class Login extends Controller
 
     public function process_login()
     {
+        $session = session();
+
         // obtener los datos del usuario
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
         // validar credenciales del ususario
         $loginModel = new LoginModel();
-        $user = $loginModel->validateUser($username, $password);
+        //$user = $loginModel->validateUser($username, $password);
+        $data = $loginModel->where('usuario', $username)->first();
 
-        if ($user) {
-            // establece los datos de la sesion del usuario
-            $session = session();
-            $session->set([
-                'user_id' => $user->perfil_id,
-                'id_usuario' => $user->id,
-                'username' => $user->usuario,
-                'nombre' => $user->nombre,
-                'apellido' => $user->apellido,
-                'email' => $user->email,
-            ]);
 
-            // redirije al dashboard
-            return redirect()->to(base_url('/dashboard'));
+
+        if ($data) {
+            // Verificar si el usuario está dado de baja
+            if ($data->baja == 'si') {
+                $session->setFlashdata('msg', 'El usuario está dado de baja.');
+                return redirect()->to(base_url('/login'));
+            }
+
+            $pass = $data->pass;
+            $authenticatePassword = password_verify($password, $pass);
+
+            if ($authenticatePassword ) {
+                // establece los datos de la sesion del usuario
+                $session->set([
+                    'user_id' => $data->perfil_id,
+                    'id_usuario' => $data->id,
+                    'username' => $data->usuario,
+                    'nombre' => $data->nombre,
+                    'apellido' => $data->apellido,
+                    'email' => $data->email,
+                ]);
+
+                $session->setFlashdata('success', 'La Sesión se ha iniciada con éxito');
+
+                if ($data->perfil_id == 1) {
+                    return redirect()->to(base_url('/cabecera_compra'));
+                } else {
+                    return redirect()->to(base_url('/bienvenido'));
+                }
+            } else {
+                $session->setFlashdata('msg', 'Contraseña Incorrecta.');
+                return redirect()->to(base_url('/login'));
+            }
         } else {
             // en caso de login invalido, muestra mensaje de error(arreglar esto)
+            $session->setFlashdata('msg', 'Usuario Inexistente.');
             return redirect()->to(base_url('/login'));
         }
     }

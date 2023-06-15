@@ -19,9 +19,21 @@ class CabeceraCompraModel extends Model
         'fecha_alta'
     ];
 
+    // public function getCompraById($compraId)
+    // {
+    //     // Obtiene una compra por su ID
+    //     return $this->find($compraId);  
+    // }
+
     public function getCompraById($compraId)
     {
         // Obtiene una compra por su ID
-        return $this->find($compraId);
+        $compra = $this->find($compraId);
+
+        if ($compra) {
+            $compra['compraId'] = $compraId; // Agrega el ID de la compra al arreglo
+        }
+
+        return $compra;
     }
 }

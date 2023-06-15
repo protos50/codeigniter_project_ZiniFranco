@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+
 </head>
 
 <body>
@@ -15,11 +17,12 @@
     <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
         <div class="card">
             <div class="card-header p-4">
-                <a class="pt-2 d-inline-block" href="/" data-abc="true">HOME | SmartHomeCorrientes.com</a>
+                <a class="pt-2 d-inline-block" href="<?php echo base_url('/'); ?>" data-abc="true">Inicio | SmartHomeCorrientes.com</a>
                 <div class="float-right">
                     <h3 class="mb-0">Factura ID Compra: # <?php echo isset($cabeceraCompra['id']) ? $cabeceraCompra['id'] : 'Sin Datos'; ?></h3>
                     <?php echo isset($cabeceraCompra['fecha_alta']) ? "Fecha de emisión: " . $cabeceraCompra['fecha_alta'] : 'Sin Datos'; ?>
                 </div>
+
             </div>
             <div class="card-body">
                 <div class="row mb-4">
@@ -61,15 +64,19 @@
                                         <td class="center"><?php echo $contador; ?></td>
                                         <td class="center"><?php echo $producto['detalle']['id_producto']; ?></td>
                                         <td class="center"><?php echo $producto['detalle']['nombre']; ?></td>
-                                        <td class="right"><?php echo $producto['detalle']['importe_unitario']; ?></td>
+                                        <td class="right">$ <?php echo $producto['detalle']['importe_unitario']; ?></td>
                                         <td class="center"><?php echo $producto['detalle']['cantidad']; ?></td>
-                                        <td class="right"><?php echo $producto['detalle']['importe_total']; ?></td>
+                                        <td class="right">$ <?php echo $producto['detalle']['importe_total']; ?></td>
                                     </tr>
                                     <?php $contador++; ?>
                                 <?php endforeach; ?>
                             <?php else : ?>
-                                <td class="center"> <h3>No hay productos comprados</h3></td>
-                                <td class="center"> <h3>Ingrese un 'id_compra' correcto</h3></td>
+                                <td class="center">
+                                    <h3>No hay productos comprados</h3>
+                                </td>
+                                <td class="center">
+                                    <h3>Ingrese un 'id_compra' correcto</h3>
+                                </td>
                             <?php endif; ?>
 
 
@@ -88,7 +95,7 @@
                                         <strong class="text-dark">Total</strong>
                                     </td>
                                     <td class="right">
-                                        <strong class="text-dark"><?php echo isset($cabeceraCompra['total']) ? $cabeceraCompra['total'] : 'Sin Datos'; ?></strong>
+                                        <strong class="text-dark">$ <?php echo isset($cabeceraCompra['total']) ? $cabeceraCompra['total'] : 'Sin Datos'; ?></strong>
                                     </td>
                                 </tr>
                             </tbody>
@@ -96,9 +103,27 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ... tu código HTML existente ... -->
             <div class="card-footer bg-white">
-                <p class="mb-0">Para los casos de garantías, cambios o devoluciones se deberá presentar la siguiente factura emitida.</p>
+                <p class="mb-3">Para los casos de garantías, cambios o devoluciones se deberá presentar la siguiente factura emitida.</p>
+
+                <!-- Agregar el botón de descarga y el formulario -->
+                <div class="text-center">
+                    <form action="<?php echo base_url('factura/downloadPDF/' . $cabeceraCompra['id']); ?>" method="post">
+                        <button type="submit" class="btn btn-info">Descargar Factura</button>
+                    </form>
+
+                    <div class="pt-3">
+                        <a href="<?php echo base_url('/'); ?>"><button class="btn btn-info">Volver al Inicio</button></a>
+
+                    </div>
+                </div>
             </div>
+
+
+            <!-- ... tu código HTML existente ... -->
+
         </div>
     </div>
 </body>

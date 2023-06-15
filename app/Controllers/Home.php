@@ -12,6 +12,14 @@ class Home extends BaseController
         echo view('footer');
     }
 
+    public function bienvenido()
+    {
+        $data = ['title' => 'Smart Home Corrientes | Bienvenidos'];
+        echo view('header',  $data);
+        echo view('bienvenido_dashboard');
+        echo view('footer');
+    }
+
     public function nosotros()
     {
         $data = ['title' => 'Smart Home Corrientes | Quienes Somos'];
@@ -51,4 +59,6 @@ class Home extends BaseController
         echo view('under-construction');
         echo view('footer');
     }
+
+
 }
