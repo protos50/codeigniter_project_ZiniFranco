@@ -1,9 +1,0 @@
-CRITICAL - 2023-04-14 04:43:35 --> Invalid file: "nosotros.php"
-in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
- 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('nosotros.php')
- 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('nosotros', [], true)
- 3 APPPATH\Controllers\Home.php(15): view('nosotros')
- 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->nosotros()
- 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
- 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -7,16 +7,16 @@
       <div class="row w-100">
         <div class="col-sm-6 col-md-12 col-lg-3 col-xl-3 mx-auto mt-1">
           <h5>Sobre Nosotros</h5>
-          <p class="text-justify">Smar Home Corrientes es pionero en la región por brindar soluciones inteligentes para el hogar y ha sabido ganado el reconocimiento por su innovación y calidad. Nos enorgullece haber
+          <p style=" text-align: justify;">Smar Home Corrientes es pionero en la región por brindar soluciones inteligentes para el hogar y ha sabido ganado el reconocimiento por su innovación y calidad. Nos enorgullece haber
             logrado la satisfacción de nuestros clientes y seguir mejorando cada día para brindarles una experiencia única.</p>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 mx-auto mt-1">
           <h5>Links Utiles</h5>
           <ul class="list-unstyled">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/construction">Catálogo</a></li>
-            <li><a href="/nosotros">Sobre Nosotros</a></li>
-            <li><a href="/contacto">Contáctanos</a></li>
+            <li><a href="<?php echo base_url('/'); ?>">Inicio</a></li>
+            <li><a href="<?php echo base_url('products'); ?>">Catálogo</a></li>
+            <li><a href="<?php echo base_url('nosotros'); ?>">Sobre Nosotros</a></li>
+            <li><a href="<?php echo base_url('contacto'); ?>">Contáctanos</a></li>
           </ul>
         </div>
 
@@ -52,9 +52,9 @@
         <!-- Grid column -->
         <div class="col-md-6">
           <ul class="list-inline float-md-right">
-            <li class="list-inline-item"><a href="/construction">Politicas de Privacidad</a></li>
-            <li class="list-inline-item"><a href="/terminos">Terminos y Condiciones</a></li>
-            <li class="list-inline-item"><a href="/construction">Boton de Arrepentimiento</a></li>
+            <li class="list-inline-item"><a href="<?php echo base_url('construction'); ?>">Politicas de Privacidad</a></li>
+            <li class="list-inline-item"><a href="<?php echo base_url('terminos'); ?>">Terminos y Condiciones</a></li>
+            <li class="list-inline-item"><a href="<?php echo base_url('construction'); ?>">Boton de Arrepentimiento</a></li>
           </ul>
         </div>
       </div>
@@ -65,7 +65,8 @@
 
 
 <!-- Bootstrap JS-->
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
+
 </body>
 
 </html>

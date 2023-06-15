@@ -1,0 +1,7 @@
+ administrador:
+ -usuario: admin
+ -contraseña: 1234
+
+ usuario comun:
+ -usuario: usuario
+ -contraseña: 1234

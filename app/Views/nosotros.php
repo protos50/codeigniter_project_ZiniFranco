@@ -79,9 +79,9 @@
 
     <div class="p-3 border rounded border-danger font-roboto" style="font-weight: 500; text-align: justify;">
       <h4 class="text-center font-weight-bold font-lato">Visión</h6>
-        <p class="lead font-weight-bold"><em>La visión de la empresa es crear un hogar inteligente conectado que mejore la calidad de vida, ahorre energía y aumente la seguridad de los hogares.</em> </p>
-        <p class="lead">Nuestra visión es crear un hogar inteligente conectado, donde la tecnología se integre de manera fluida en la vida cotidiana de las personas.</p>
-        <p class="lead">Queremos ofrecer soluciones innovadoras y fáciles de usar que ayuden a nuestros clientes a mejorar su calidad de vida, ahorrar energía y aumentar la seguridad en sus hogares".</p>
+        <p class="lead font-weight-bold" style=" text-align: justify;"><em>La visión de la empresa es crear un hogar inteligente conectado que mejore la calidad de vida, ahorre energía y aumente la seguridad de los hogares.</em> </p>
+        <p class="lead" style=" text-align: justify;">Nuestra visión es crear un hogar inteligente conectado, donde la tecnología se integre de manera fluida en la vida cotidiana de las personas.</p>
+        <p class="lead" style=" text-align: justify;">Queremos ofrecer soluciones innovadoras y fáciles de usar que ayuden a nuestros clientes a mejorar su calidad de vida, ahorrar energía y aumentar la seguridad en sus hogares".</p>
 
     </div>
 
@@ -90,9 +90,9 @@
 
     <div class="p-3 border rounded border-danger font-roboto" style="font-weight: 500; text-align: justify;">
       <h4 class="text-center font-weight-bold font-lato">Misión</h6>
-        <p class="lead"><em>El objetivo de  la empresa es liderar el mercado de productos para hogares inteligentes ofreciendo calidad, diseño y funcionalidad a precios competitivos y ser reconocidos por sus clientes como una empresa confiable y comprometida con la satisfacción de sus necesidades.</em></p>
-        <p class="lead">Nuestro objetivo es convertirnos en líderes del mercado de los productos para hogares inteligentes, ofreciendo la mejor calidad, diseño y funcionalidad a precios competitivos. </p>
-        <p class="lead">Queremos ser reconocidos por nuestros clientes como una empresa confiable y comprometida con la satisfacción de sus necesidades</p>
+        <p class="lead" style=" text-align: justify;"><em>El objetivo de  la empresa es liderar el mercado de productos para hogares inteligentes ofreciendo calidad, diseño y funcionalidad a precios competitivos y ser reconocidos por sus clientes como una empresa confiable y comprometida con la satisfacción de sus necesidades.</em></p>
+        <p class="lead" style=" text-align: justify;">Nuestro objetivo es convertirnos en líderes del mercado de los productos para hogares inteligentes, ofreciendo la mejor calidad, diseño y funcionalidad a precios competitivos. </p>
+        <p class="lead" style=" text-align: justify;">Queremos ser reconocidos por nuestros clientes como una empresa confiable y comprometida con la satisfacción de sus necesidades</p>
     </div>
 
    <div class="mb-5 separador"></div>
@@ -100,8 +100,8 @@
 
     <div class="p-3 border rounded border-danger font-roboto" style="font-weight: 500; text-align: justify;">
       <h4 class="text-center font-weight-bold font-lato">Innovación</h6>
-      <p class="lead">La empresa Smart Home Corrientes se distingue por ofrecer innovación en cada uno de sus productos para hogares inteligentes.</p>
-      <p class="lead">La innovación que ofrecemos como empresa se centra en mejorar la calidad de vida de sus clientes, mediante el desarrollo de productos y soluciones de vanguardia en el campo de los hogares inteligentes, que hacen que la vida sea más cómoda, segura y eficiente.</p>
+      <p class="lead" style=" text-align: justify;">La empresa Smart Home Corrientes se distingue por ofrecer innovación en cada uno de sus productos para hogares inteligentes.</p>
+      <p class="lead" style=" text-align: justify;">La innovación que ofrecemos como empresa se centra en mejorar la calidad de vida de sus clientes, mediante el desarrollo de productos y soluciones de vanguardia en el campo de los hogares inteligentes, que hacen que la vida sea más cómoda, segura y eficiente.</p>
     </div>
     <!-- Staff -->
     <div class="separador separador-grande my-5 d-flex justify-content-center align-items-center">

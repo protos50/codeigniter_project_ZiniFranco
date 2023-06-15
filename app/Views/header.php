@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,11 +8,17 @@
   <title><?= $title ?></title>
 
 
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <!-- Include CSS file -->
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <!-- Include Font Awesome CSS file -->
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  Include Font Awesome CSS file
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css"> -->
+
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/bootstrap.min.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/fontawesome/css/all.min.css'); ?>">
+  <!-- Bootstrap JS-->
+  <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
+
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
@@ -21,15 +27,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <?php $session = session(); ?>
+
 </head>
 
 <body class="position-static bg-color">
   <div class="position-static">
     <header class="position-sticky fixed-top">
-      <nav class="navbar navbar-expand-lg navbar-light bg-color-nav p-0">
+      <nav class="navbar navbar-expand-md  navbar-light bg-color-nav p-0">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">
+          <a class="navbar-brand p-2 p-md-1" href="<?php echo base_url('/'); ?>">
             <i class="navbar-brandLogo">
               <!-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
                 <path d="M20.1 14.56a2.07 2.07 0 0 0-.47-.18V9.62a1.64 1.64 0 0 0 .48-.18 1.78 1.78 0 0 0-1.78-3.09 1.62 1.62 0 0 0-.41.32l-4.11-2.38a1.7 1.7 0 0 0 .07-.51 1.78 1.78 0 0 0-3.56 0 1.7 1.7 0 0 0 .07.51L6.28 6.66a1.58 1.58 0 0 0-.41-.31 1.78 1.78 0 0 0-1.78 3.09 1.64 1.64 0 0 0 .48.18v4.76a2.07 2.07 0 0 0-.47.18 1.78 1.78 0 1 0 1.78 3.09 1.72 1.72 0 0 0 .4-.31l4.11 2.37a1.7 1.7 0 0 0-.07.51 1.78 1.78 0 0 0 3.56 0 1.69 1.69 0 0 0-.09-.56l4.09-2.36a1.7 1.7 0 0 0 .44.35 1.78 1.78 0 1 0 1.78-3.09zM6.72 15.69a1.72 1.72 0 0 0-.19-.47 1.53 1.53 0 0 0-.31-.4l5.38-9.33a1.82 1.82 0 0 0 1 0l5.4 9.33a1.53 1.53 0 0 0-.31.4 1.72 1.72 0 0 0-.19.47zM17.5 7.4a1.81 1.81 0 0 0 .17 1.38 1.75 1.75 0 0 0 1.12.84v4.76h-.07l-5.39-9.31.05-.07zM10.82 5a.12.12 0 0 0 0 .05L5.48 14.4h-.07V9.62a1.75 1.75 0 0 0 1.12-.84A1.81 1.81 0 0 0 6.7 7.4zm2.6 14a1.78 1.78 0 0 0-1.32-.58 1.75 1.75 0 0 0-1.28.54L6.7 16.6v-.06h10.78v.11z"></path>
@@ -49,59 +59,70 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
 
-              <!-- PROXIMAMENTE -->
-              <!-- <li class="nav-item dropdown position-static m-0  p-2">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Productos </a>
+              <li class="nav-item p-2 p-md-1">
+                <a class="nav-link" href="<?php echo base_url('products'); ?>">Catalogo</a>
+              </li>
 
-                <ul class="bg-color-nav dropdown-menu w-100 text-center">
-                  <div class="container-fluid">
-                    <div class="row w-100 justify-content-center">
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
+              <?php if ($session->user_id == 1) : ?>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="<?php echo base_url('user-list'); ?>">Lista usuarios</a>
+                </li>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="<?php echo base_url('messages'); ?>">Mensajes</a>
+                </li>
+                <li class="nav-item  p-2">
+                  <a class="nav-link" href="<?php echo base_url('cabecera_compra'); ?>">Ventas</a>
+                </li>
+              <?php endif; ?>
 
-                      </div>
+              <?php if ($session->user_id == 2 || !$session->has('user_id')) : ?>
+                <li class="nav-item  p-2 p-md-1">
+                  <a class="nav-link" href="<?php echo base_url('nosotros'); ?>">Quienes Somos</a>
+                </li>
 
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets </a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                <li class="nav-item  p-2 p-md-1">
+                  <a class="nav-link" href="<?php echo base_url('comercializacion'); ?>">Comercialización</a>
+                </li>
 
-                      </div>
+                <li class="nav-item  p-2 p-md-1">
+                  <a class="nav-link" href="<?php echo base_url('contacto'); ?>">Información de Contacto</a>
+                </li>
+                <li class="nav-item  p-2 p-md-1">
+                  <a class="nav-link" href="<?php echo base_url('terminos'); ?>">Términos y Usos</a>
+                </li>
+                <!-- 
+                <li class="nav-item  p-2 p-md-1">
+                  <a class="nav-link" href="<?php echo base_url('cart'); ?>">Carrito</a>
+                </li> -->
 
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?= base_url("cart"); ?>">
+                    <svg class="bi" width="28" height="28" fill="currentColor">
+                      <use xlink:href="assets/icons/bootstrap-icons.svg#cart3" />
+                    </svg>
+                    <span id="cantidad-carrito"></span>
+                  </a>
+                </li>
+              <?php endif; ?>
 
-                      </div>
 
-                      <div class="col-6 col-md-3 col-sm-3">
-                        <li><a class="dropdown-item" href="#">Teléfonos</a></li>
-                        <li><a class="dropdown-item" href="#">Tablets</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
-
-                      </div>
-                    </div>
-                  </div>
+              <li class="nav-item dropdown m-0 p-2">
+                <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-user"></i>
+                </a>
+                <ul class="dropdown-menu text-center" aria-labelledby="loginDropdown">
+                  <?php if ($session->has('user_id')) : ?>
+                    <li><a class="dropdown-item" href="<?php echo base_url('logout'); ?>">Deslogearse</a></li>
+                  <?php else : ?>
+                    <li><a class="dropdown-item" href="<?php echo base_url('login'); ?>">Ingresar</a></li>
+                    <li><a class="dropdown-item" href="<?php echo base_url('register'); ?>">Registrarse</a></li>
+                  <?php endif; ?>
                 </ul>
-              </li> -->
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/nosotros">Quienes Somos</a>
-              </li>
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/comercializacion">Comercialización</a>
               </li>
 
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/contacto">Información de Contacto</a>
-              </li>
-              <li class="nav-item  p-2">
-                <a class="nav-link" href="/terminos">Términos y Usos</a>
-              </li>
             </ul>
+
+
           </div>
         </div>
       </nav>
